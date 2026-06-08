@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preparação de FQA</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --container-bg: #161b22;
+            --text-color: #c9d1d9;
+            --text-muted: #8b949e;
+            --border-color: #30363d;
+            --button-bg: #21262d;
+            --button-hover: #30363d;
+            --correct-color: #238636;
+            --incorrect-color: #da3633;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 30px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+
+        h1, h2, h3 {
+            color: #f0f6fc;
+            margin-top: 0;
+        }
+
+        .menu-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: var(--button-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.2s, border-color 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .btn:hover:not(:disabled) {
+            background-color: var(--button-hover);
+            border-color: #8b949e;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn.correct {
+            background-color: var(--correct-color);
+            border-color: var(--correct-color);
+            color: #ffffff;
+        }
+
+        .btn.incorrect {
+            background-color: var(--incorrect-color);
+            border-color: var(--incorrect-color);
+            color: #ffffff;
+        }
+
+        .breadcrumb {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .feedback-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .feedback-box.wrong {
+            background-color: rgba(218, 54, 51, 0.1);
+            border: 1px solid var(--incorrect-color);
+            color: #ff7b72;
+        }
+
+        .feedback-box.right {
+            background-color: rgba(35, 134, 54, 0.1);
+            border: 1px solid var(--correct-color);
+            color: #56d364;
+        }
+
+        .action-area {
+            margin-top: 25px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-next {
+            background-color: #238636;
+            color: #ffffff;
+            border: 1px solid rgba(240,246,252,0.1);
+            padding: 10px 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .btn-next:hover {
+            background-color: #2ea043;
+        }
+
+        .completed-badge {
+            float: right;
+            font-size: 12px;
+            background-color: rgba(35, 134, 54, 0.2);
+            color: #56d364;
+            padding: 2px 8px;
+            border-radius: 12px;
+            border: 1px solid var(--correct-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="app">
+        </div>
+
+    <script src="questions.js"></script>
+    <script>
+        let currentPath = { year: null, subject: null, domain: null, subdomain: null };
+        let currentQuestions = [];
+        let currentQuestionIndex = 0;
+        let canAnswer = true;
+
+        function getCompletedKey(year, subject, domain, sub) {
+            return `completed_${year}_${subject}_${domain}_${sub}`;
+        }
+
+        function renderApp() {
+            const app = document.getElementById('app');
+            
+            if (!currentPath.year) {
+                renderYears();
+            } else if (!currentPath.subject) {
+                renderSubjects();
+            } else if (!currentPath.domain) {
+                renderDomains();
+            } else if (!currentPath.subdomain) {
+                renderSubdomains();
+            } else {
+                renderQuiz();
+            }
+        }
+
+        function renderYears() {
+            let html = '<h2>Selecionar Ano de Escolaridade</h2><div class="menu-grid">';
+            Object.keys(quizData).forEach(year => {
+                html += `<button class="btn" onclick="selectYear('${year}')">${year}º Ano</button>`;
+            });
+            html += '</div>';
+            document.getElementById('app').innerHTML = html;
+        }
+
+        function selectYear(year) {
+            currentPath.year = year;
+            renderApp();
+        }
+
+        function renderSubjects() {
+            let html = `<div class="breadcrumb">${currentPath.year}º Ano</div>`;
+            html += '<h2>Selecionar Disciplina</h2><div class="menu-grid">';
+            Object.keys(quizData[currentPath.year]).forEach(subject => {
+                html += `<button class="btn" onclick="selectSubject('${subject}')">${subject}</button>`;
+            });
+            html += `<button class="btn" style="margin-top:15px; background:transparent;" onclick="resetPath('year')">Voltar</button>`;
+            html += '</div>';
+            document.getElementById('app').innerHTML = html;
+        }
+
+        function selectSubject(subject) {
+            currentPath.subject = subject;
+            renderApp();
+        }
+
+        function renderDomains() {
+            let html = `<div class="breadcrumb">${currentPath.year}º Ano > ${currentPath.subject}</div>`;
+            html += '<h2>Selecionar Domínio</h2><div class="menu-grid">';
+            Object.keys(quizData[currentPath.year][currentPath.subject]).forEach(domain => {
+                html += `<button class="btn" onclick="selectDomain('${domain}')">${domain}</button>`;
+            });
+            html += `<button class="btn" style="margin-top:15px; background:transparent;" onclick="resetPath('subject')">Voltar</button>`;
+            html += '</div>';
+            document.getElementById('app').innerHTML = html;
+        }
+
+        function selectDomain(domain) {
+            currentPath.domain = domain;
+            renderApp();
+        }
+
+        function renderSubdomains() {
+            let html = `<div class="breadcrumb">${currentPath.year}º Ano > ${currentPath.subject} > ${currentPath.domain}</div>`;
+            html += '<h2>Selecionar Subdomínio</h2><div class="menu-grid">';
+            
+            Object.keys(quizData[currentPath.year][currentPath.subject][currentPath.domain]).forEach(sub => {
+                const isDone = localStorage.getItem(getCompletedKey(currentPath.year, currentPath.subject, currentPath.domain, sub));
+                const badge = isDone ? '<span class="completed-badge">Completo</span>' : '';
+                html += `<button class="btn" onclick="selectSubdomain('${sub}')">${sub} ${badge}</button>`;
+            });
+            html += `<button class="btn" style="margin-top:15px; background:transparent;" onclick="resetPath('domain')">Voltar</button>`;
+            html += '</div>';
+            document.getElementById('app').innerHTML = html;
+        }
+
+        function selectSubdomain(sub) {
+            currentPath.subdomain = sub;
+            currentQuestions = quizData[currentPath.year][currentPath.subject][currentPath.domain][sub];
+            currentQuestionIndex = 0;
+            canAnswer = true;
+            renderApp();
+        }
+
+        function renderQuiz() {
+            if (currentQuestions.length === 0) {
+                document.getElementById('app').innerHTML = `
+                    <h2>Sem perguntas</h2>
+                    <p>Ainda não foram adicionadas perguntas a este subdomínio.</p>
+                    <button class="btn" onclick="resetPath('subdomain')">Voltar ao Menu</button>
+                `;
+                return;
+            }
+
+            if (currentQuestionIndex >= currentQuestions.length) {
+                // Fim do subdomínio
+                localStorage.setItem(getCompletedKey(currentPath.year, currentPath.subject, currentPath.domain, currentPath.subdomain), "true");
+                document.getElementById('app').innerHTML = `
+                    <h2>Subdomínio Concluído</h2>
+                    <p>Respondeste corretamente a todas as perguntas desta subunidade.</p>
+                    <button class="btn" onclick="resetPath('subdomain')">Voltar aos Subdomínios</button>
+                `;
+                return;
+            }
+
+            const q = currentQuestions[currentQuestionIndex];
+            let html = `<div class="breadcrumb">${currentPath.subject} ${currentPath.year}º Ano > ${currentPath.subdomain} (Pergunta ${currentQuestionIndex + 1}/${currentQuestions.length})</div>`;
+            html += `<h3 style="line-height:1.5; white-space: pre-line;">${q.enunciado}</h3>`;
+            html += `<div class="options-grid">`;
+            
+            q.opcoes.forEach((opcao, index) => {
+                html += `<button class="btn option-btn" id="opt-${index}" onclick="checkAnswer(${index})">${opcao}</button>`;
+            });
+            
+            html += `</div>`;
+            html += `<div class="feedback-box" id="feedback"></div>`;
+            html += `<div class="action-area" id="action-area"></div>`;
+
+            document.getElementById('app').innerHTML = html;
+        }
+
+        function checkAnswer(selectedIndex) {
+            if (!canAnswer) return;
+            
+            const q = currentQuestions[currentQuestionIndex];
+            const feedback = document.getElementById('feedback');
+            const actionArea = document.getElementById('action-area');
+            const selectedBtn = document.getElementById(`opt-${selectedIndex}`);
+
+            if (selectedIndex === q.correta) {
+                // Resposta Correta
+                canAnswer = false;
+                // Bloquear todos os botões e pintar o correto de verde
+                document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
+                selectedBtn.disabled = false;
+                selectedBtn.classList.add('correct');
+                
+                feedback.className = "feedback-box right";
+                feedback.innerHTML = `<strong>Resposta Correta.</strong><br><br>${q.resolucao}`;
+                feedback.style.display = "block";
+
+                actionArea.innerHTML = `<button class="btn btn-next" onclick="nextQuestion()">Seguinte</button>`;
+            } else {
+                // Resposta Incorreta
+                selectedBtn.classList.add('incorrect');
+                selectedBtn.disabled = true; // Impede clicar na mesma opção errada de novo
+                
+                feedback.className = "feedback-box wrong";
+                feedback.innerHTML = `<strong>Opção Incorreta.</strong><br>${q.explicacoes[selectedIndex]}`;
+                feedback.style.display = "block";
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            canAnswer = true;
+            renderQuiz();
+        }
+
+        function resetPath(level) {
+            if (level === 'year') currentPath.year = null;
+            if (level === 'subject') currentPath.subject = null;
+            if (level === 'domain') currentPath.domain = null;
+            if (level === 'subdomain') currentPath.subdomain = null;
+            renderApp();
+        }
+
+        // Inicializar
+        renderApp();
+    </script>
+</body>
+</html>
