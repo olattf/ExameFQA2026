@@ -25,406 +25,390 @@ const dataCompleto = {
               "2": "O neutrão não tem carga elétrica. O protão e o eletrão é que têm cargas simétricas.",
               "3": "A massa do eletrão é cerca de 1836 vezes menor do que a massa do protão."
             },
-            "resolucao": "Os nucleões (protões e neutrões) encontram-se no núcleo e têm massas muito semelhantes entre si. A massa do eletrão, que se encontra na nuvem eletrónica, é praticamente desprezável face à dos nucleões."
-          },
-          {
-            "id": 2,
-            "enunciado": "Um catião de um elemento e o átomo desse mesmo elemento têm sempre igual número de...",
-            "opcoes": [
-              "eletrões.",
-              "neutrões.",
-              "nucleões.",
-              "protões."
-            ],
-            "correta": 3,
-            "explicacoes": {
-              "0": "Um catião forma-se precisamente pela perda de eletrões de um átomo, logo o número de eletrões é diferente.",
-              "1": "Podem existir isótopos do mesmo elemento, variando o número de neutrões.",
-              "2": "Se o número de neutrões pode variar (isótopos), o número de nucleões (protões + neutrões) também pode."
-            },
-            "resolucao": "O que define um elemento químico é o seu número atómico (Z), que corresponde ao número de protões no núcleo. Um catião forma-se por perda de eletrões, mantendo o núcleo intacto."
-          },
-          {
-            "id": 3,
-            "enunciado": "O ião fluoreto (F⁻) deriva do isótopo do flúor que se representa por número de massa 19 e número atómico 9. Este ião é constituído por...",
-            "opcoes": [
-              "9 protões, 10 neutrões e 10 eletrões.",
-              "9 protões, 10 neutrões e 9 eletrões.",
-              "9 protões e 10 neutrões.",
-              "9 protões e 19 neutrões."
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "Esta seria a constituição de um átomo de flúor neutro. O ião tem carga -1, logo tem mais um eletrão.",
-              "2": "Esta opção indica apenas a constituição do núcleo atómico e omite a nuvem eletrónica.",
-              "3": "O número 19 corresponde ao número de massa (protões + neutrões), não ao número de neutrões."
-            },
-            "resolucao": "Sendo Z = 9, tem 9 protões. O número de neutrões é A - Z = 19 - 9 = 10 neutrões. Como é um anião monovalente (F⁻), ganhou 1 eletrão relativamente ao átomo neutro, passando a ter 9 + 1 = 10 eletrões."
-          },
-          {
-            "id": 4,
-            "enunciado": "O isótopo de um elemento X tem um número de massa igual a 40. Sabe-se que tem o mesmo número de neutrões que o isótopo de potássio-39 (Z=19). Indique a afirmação correta.",
-            "opcoes": [
-              "X é um isótopo do árgon (Z=18).",
-              "O número atómico de X é 19.",
-              "O átomo de X tem 20 protões e, se estiver neutro, 20 eletrões.",
-              "O isótopo de X representa-se por X com A=40 e Z=18."
-            ],
-            "correta": 2,
-            "explicacoes": {
-              "0": "O árgon tem Z=18. Como verificamos nos cálculos, o X tem Z=20.",
-              "1": "Se tivesse Z=19 seria um isótopo do potássio, mas Z=20.",
-              "3": "A representação estaria incorreta pois o Z determinado é 20 e não 18."
-            },
-            "resolucao": "O isótopo potássio-39 tem 39 - 19 = 20 neutrões. Como X tem também 20 neutrões e A = 40, o seu número atómico é Z = 40 - 20 = 20. Assim, trata-se do elemento Cálcio, que tem 20 protões e 20 eletrões (se neutro)."
-          },
-          {
-            "id": 5,
-            "enunciado": "O magnésio na Natureza é constituído por três isótopos: Mg-24, Mg-25 e Mg-26. A abundância do isótopo Mg-24 é 78,99%. A massa atómica relativa do magnésio é 24,31. Indique a afirmação correta.",
-            "opcoes": [
-              "A abundância do isótopo Mg-25 é igual à do isótopo Mg-26.",
-              "O núcleo do isótopo Mg-24 contém 12 protões e 24 neutrões.",
-              "A massa de qualquer átomo de Mg-24 é 24,31 u.",
-              "A massa atómica relativa do magnésio é mais próxima do número de massa do isótopo mais abundante."
-            ],
-            "correta": 3,
-            "explicacoes": {
-              "0": "A abundância restante divide-se entre o Mg-25 e o Mg-26, mas não é necessariamente em partes iguais.",
-              "1": "O isótopo Mg-24 contém 12 protões e 12 neutrões (24 - 12 = 12).",
-              "2": "24,31 é a massa atómica relativa MÉDIA de todos os isótopos de magnésio, e não a massa específica do isótopo 24."
-            },
-            "resolucao": "A massa atómica relativa calcula-se através da média ponderada das massas dos isótopos. O isótopo Mg-24 tem a maior abundância (78,99%), aproximando o valor da média (24,31) para perto de 24."
-          },
-          {
-            "id": 6,
-            "enunciado": "Um feixe de iões Ne⁺ passa por um espetrómetro de massa. Sabendo que o néon tem os isótopos Ne-20 (90,48%), Ne-21 (0,27%) e Ne-22 (9,25%), quantos picos se observam no espetro e qual o mais intenso?",
-            "opcoes": [
-              "3 picos, sendo o do Ne-20 o mais intenso.",
-              "3 picos, sendo o do Ne-22 o mais intenso.",
-              "1 pico correspondente à massa média.",
-              "2 picos, pois o Ne-21 tem uma abundância desprezável e não é detetado."
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "O Ne-22 tem apenas 9,25% de abundância, logo não será o mais intenso.",
-              "2": "A espetrometria de massa separa as massas individuais, não apresenta a média.",
-              "3": "Os espetrómetros de massa têm sensibilidade para detetar mesmo as abundâncias baixas, logo observam-se 3 picos."
-            },
-            "resolucao": "Cada isótopo produz um pico diferente. A intensidade (altura) desse pico é proporcional à abundância isotópica. Haverá 3 picos e o do Ne-20 será o maior, devido aos seus 90,48%."
-          },
-          {
-            "id": 7,
-            "enunciado": "A quantidade de matéria de água existente numa gota de água pura, de massa 0,050 g, é aproximadamente: (M(H₂O) = 18,02 g/mol)",
-            "opcoes": [
-              "2,8 × 10⁻³ mol",
-              "5,0 × 10⁻² mol",
-              "1,7 × 10²¹ mol",
-              "0,90 mol"
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "Confundiste a massa da gota com a quantidade de matéria. Usa n = m/M.",
-              "2": "Este valor aproxima-se do número de moléculas da gota, não da quantidade de matéria.",
-              "3": "Provavelmente invertes as variáveis ou efetuaste a divisão M/m."
-            },
-            "resolucao": "A quantidade de matéria relaciona-se com a massa e a massa molar por: n = m / M. Substituindo: n = 0,050 / 18,02 ≈ 0,00277 mol, que é 2,8 × 10⁻³ mol."
-          },
-          {
-            "id": 8,
-            "enunciado": "Numa amostra de 10 g de carbonato de cálcio, CaCO₃ (M = 100,09 g/mol), o número total de átomos é aproximadamente:",
-            "opcoes": [
-              "6,0 × 10²²",
-              "3,0 × 10²³",
-              "1,0 × 10²³",
-              "5,0 × 10²³"
-            ],
-            "correta": 1,
-            "explicacoes": {
-              "0": "Este é o número de unidades formulares (moléculas) de CaCO₃, mas a questão pede o número TOTAL de átomos.",
-              "2": "Possível erro a relacionar as unidades com a constante de Avogadro.",
-              "3": "Não corresponde ao cálculo com as proporções corretas de átomos."
-            },
-            "resolucao": "1º) n = m / M = 10 / 100,09 ≈ 0,10 mol. 2º) N = n × NA = 0,10 × (6,022 × 10²³) ≈ 6,0 × 10²² unidades de CaCO₃. 3º) Cada unidade tem 5 átomos (1 Ca, 1 C, 3 O). O total é 5 × 6,0 × 10²² = 3,0 × 10²³ átomos."
-          },
-          {
-            "id": 9,
-            "enunciado": "Numa mistura gasosa constituída por 2,0 mol de Hélio (He) e 3,0 mol de Néon (Ne), qual é a fração molar do hélio?",
-            "opcoes": [
-              "0,40",
-              "0,60",
-              "2,0",
-              "0,66"
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "0,60 seria a fração molar do Néon (3,0 / 5,0).",
-              "2": "2,0 é a quantidade de matéria de hélio, não a sua fração. A fração molar nunca é superior a 1.",
-              "3": "Dividiste a quantidade de hélio pela de néon (2/3), mas o denominador deve ser o total da mistura."
-            },
-            "resolucao": "Fração molar (x) = n(componente) / n(total). n_total = 2,0 + 3,0 = 5,0 mol. Logo, x(He) = 2,0 / 5,0 = 0,40."
-          },
-          {
-            "id": 10,
-            "enunciado": "Uma liga metálica contém 15 g de cobre e 35 g de zinco. Qual é a fração em massa de zinco na liga?",
-            "opcoes": [
-              "0,30",
-              "0,70",
-              "0,43",
-              "0,50"
-            ],
-            "correta": 1,
-            "explicacoes": {
-              "0": "0,30 corresponde à fração em massa de cobre.",
-              "2": "Razão entre a massa de cobre e a massa de zinco, e não fração mássica.",
-              "3": "Seria 0,50 se houvesse massas iguais de ambos os metais."
-            },
-            "resolucao": "Fração em massa = m(componente) / m(total). Massa total = 15 + 35 = 50 g. Fração de Zn = 35 / 50 = 0,70."
-          },
-          {
-            "id": 11,
-            "enunciado": "Considere um copo contendo 250 g de água pura (M(H₂O) = 18,02 g/mol). Qual das seguintes afirmações é verdadeira sobre esta amostra?",
-            "opcoes": [
-              "A amostra contém aproximadamente 13,9 mol de moléculas de água.",
-              "A amostra contém 8,35 × 10²⁴ átomos de hidrogénio.",
-              "A quantidade de matéria de oxigénio é de 27,8 mol.",
-              "A massa da amostra representa cerca de 250 mol de água."
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "O valor 8,35 × 10²⁴ é o número de moléculas de H₂O. Os átomos de H seriam o dobro.",
-              "2": "A quantidade de matéria de oxigénio é igual à de água (13,9 mol).",
-              "3": "250 g de massa não são 250 moles."
-            },
-            "resolucao": "n = m / M = 250 / 18,02 = 13,87 mol. A opção que afirma ter aproximadamente 13,9 mol de moléculas de água é a única correta."
-          },
-          {
-            "id": 12,
-            "enunciado": "Em relação às dimensões à escala atómica, indique a afirmação correta.",
-            "opcoes": [
-              "O nanómetro (nm) equivale a 10⁻⁶ m.",
-              "A nuvem eletrónica tem uma dimensão da ordem de grandeza de 10⁻¹⁵ m.",
-              "O núcleo atómico é cerca de 100 000 vezes menor do que o átomo.",
-              "As ordens de grandeza macroscópicas descrevem as dimensões atómicas de forma direta."
-            ],
-            "correta": 2,
-            "explicacoes": {
-              "0": "O nanómetro equivale a 10⁻⁹ m. É o micrómetro que é 10⁻⁶ m.",
-              "1": "10⁻¹⁵ m pertence ao núcleo. O átomo (nuvem eletrónica) ronda os 10⁻¹⁰ m.",
-              "3": "As escalas macroscópicas não são adequadas para descrever entidades à escala atómica."
-            },
-            "resolucao": "O raio atómico (tamanho do átomo) é da ordem dos 10⁻¹⁰ m e o raio do núcleo atómico é dos 10⁻¹⁵ m. A diferença de 10⁵ significa que o átomo é cerca de 100 000 vezes maior que o seu núcleo."
+            "resolucao": "Os nucleões (protões e neutrões) estão no núcleo e têm massas semelhantes. Os eletrões têm uma massa residual face aos nucleões."
           }
         ],
-        "SD2 Energia dos eletrões nos átomos": [
+        "SD2 Energia dos eletrões nos átomos": [],
+        "SD3 Tabela Periódica": [
           {
-            "id": 13,
-            "enunciado": "O espetro de emissão do átomo de hidrogénio no visível é constituído por...",
-            "opcoes": [
-              "um fundo negro com riscas coloridas, correspondendo a energias específicas emitidas pelas transições dos eletrões.",
-              "um fundo colorido contínuo interrompido por riscas negras.",
-              "todas as radiações do espetro eletromagnético sem qualquer interrupção.",
-              "apenas uma risca correspondente à transição do eletrão para o estado fundamental."
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "Essa é a descrição de um espetro de absorção (radiação em falta num fundo contínuo).",
-              "2": "Isso seria um espetro de emissão contínuo (ex: luz branca de uma lâmpada incandescente), não atómico.",
-              "3": "O átomo de hidrogénio emite várias riscas distintas (séries de Lyman, Balmer, Paschen, etc.) derivadas de múltiplas transições possíveis."
-            },
-            "resolucao": "Os espetros atómicos de emissão são descontínuos (de riscas). Aparecem como riscas brilhantes (coloridas, no caso do visível) sobre um fundo escuro. Cada risca corresponde à emissão de um fotão com energia exatamente igual à diferença de energia entre dois níveis da nuvem eletrónica."
+                    "id": "10q1sd3_1",
+                    "enunciado": "Considere as posições na Tabela Periódica dos elementos azoto, N, alumínio, Aℓ, e silício, Si. Dos três elementos, o que apresenta menor energia de ionização é o ______ e o que tem maior raio atómico é o ______.",
+                    "opcoes": [
+                              "Aℓ ... Si",
+                              "N ... Si",
+                              "Aℓ ... Aℓ",
+                              "N ... Aℓ"
+                    ],
+                    "correta": 2,
+                    "explicacoes": {
+                              "0": "O alumínio tem a menor energia de ionização, mas tem o maior raio atómico (não o silício), pois o raio atómico diminui ao longo do período.",
+                              "1": "O azoto tem a maior energia de ionização dos três, por estar no 2º período, enquanto os outros estão no 3º.",
+                              "3": "O azoto tem a maior energia de ionização, não a menor."
+                    },
+                    "resolucao": "O N está no 2º período e o Aℓ e o Si no 3º período. A energia de ionização diminui ao longo de um grupo e aumenta ao longo de um período, logo o Aℓ tem a menor energia de ionização (tem menor carga nuclear que o Si). O raio atómico aumenta ao longo do grupo e diminui ao longo do período, pelo que o Aℓ tem maior raio que o N e que o Si."
           },
           {
-            "id": 14,
-            "enunciado": "Considere o diagrama de níveis de energia do átomo de hidrogénio. A transição de um eletrão do nível n=4 para o nível n=2 origina a emissão de radiação integrada na série de...",
-            "opcoes": [
-              "Lyman (Ultravioleta).",
-              "Balmer (Visível).",
-              "Paschen (Infravermelho).",
-              "Brackett (Micro-ondas)."
-            ],
-            "correta": 1,
-            "explicacoes": {
-              "0": "A série de Lyman ocorre quando o eletrão transita para o nível fundamental (n=1).",
-              "2": "A série de Paschen ocorre para transições cujo nível de chegada é n=3.",
-              "3": "A série de Brackett ocorre para o nível n=4 (neste caso o eletrão partiu de n=4, não chegou a n=4 vindo de cima)."
-            },
-            "resolucao": "Qualquer transição de um estado excitado (n>2) para o estado n=2 (primeiro estado excitado) no átomo de hidrogénio origina a emissão de radiação visível, constituindo a Série de Balmer."
+                    "id": "10q1sd3_2",
+                    "enunciado": "A diminuição do raio atómico longo do 2º período da Tabela Periódica, em função do respetivo número atómico, pode ser explicada pelo aumento...",
+                    "opcoes": [
+                              "do número de eletrões de valência.",
+                              "da carga nuclear.",
+                              "da energia de ionização.",
+                              "do número quântico principal."
+                    ],
+                    "correta": 1,
+                    "explicacoes": {
+                              "0": "Embora o número de eletrões de valência aumente, isso não é a principal causa da diminuição do raio, mas sim a atração núcleo-eletrões.",
+                              "2": "A energia de ionização aumenta porque o raio atómico diminui (e a atração aumenta), não é a causa da diminuição do raio.",
+                              "3": "Ao longo de um período o número quântico principal (n) mantém-se constante (n=2 no caso do 2º período)."
+                    },
+                    "resolucao": "Ao longo de um período, o número de protões (carga nuclear) aumenta, enquanto os eletrões são adicionados ao mesmo nível de energia (mesmo número quântico principal). A atração exercida pelo núcleo sobre a nuvem eletrónica torna-se mais forte, o que faz diminuir o raio atómico."
           },
           {
-            "id": 15,
-            "enunciado": "A energia do eletrão no átomo de hidrogénio no estado fundamental (n=1) é E₁ = -2,18 × 10⁻¹⁸ J. Qual a energia de ionização deste átomo, expressa em Joule?",
-            "opcoes": [
-              "-2,18 × 10⁻¹⁸ J",
-              "2,18 × 10⁻¹⁸ J",
-              "0 J",
-              "4,36 × 10⁻¹⁸ J"
-            ],
-            "correta": 1,
-            "explicacoes": {
-              "0": "A energia de ionização é a energia fornecida (absorvida), logo o seu valor é positivo. Esse é o valor da energia do nível n=1.",
-              "2": "0 J é a energia do eletrão quando já foi removido (n=∞), não a energia necessária para o remover.",
-              "3": "Este seria o dobro da energia necessária."
-            },
-            "resolucao": "A energia de ionização corresponde à energia mínima necessária para remover o eletrão do estado fundamental (levar de n=1 até n=∞, onde E=0). Assim, ∆E = E∞ - E₁ = 0 - (-2,18 × 10⁻¹⁸) = 2,18 × 10⁻¹⁸ J."
+                    "id": "10q1sd3_3",
+                    "enunciado": "O elemento representativo do 3º período que necessita de maior energia para que lhe seja retirado o eletrão mais externo, encontra-se no grupo...",
+                    "opcoes": [
+                              "1.",
+                              "14.",
+                              "17.",
+                              "18."
+                    ],
+                    "correta": 3,
+                    "explicacoes": {
+                              "0": "Os elementos do grupo 1 têm as menores energias de ionização do seu período.",
+                              "1": "Os elementos do grupo 14 têm uma energia de ionização intermédia.",
+                              "2": "Embora a energia de ionização dos halogéneos (grupo 17) seja elevada, é menor que a dos gases nobres do mesmo período."
+                    },
+                    "resolucao": "A energia de ionização aumenta genericamente ao longo de um período. Os gases nobres (grupo 18) apresentam as maiores energias de ionização de cada período porque possuem as configurações eletrónicas mais estáveis (subnível p totalmente preenchido) e a maior carga nuclear efetiva do período."
           },
           {
-            "id": 16,
-            "enunciado": "O espetro fotoeletrónico (PES) de um determinado elemento apresenta três picos de energia de remoção. Sabendo que o subnível de menor energia contém 2 eletrões, o subnível intermédio 2 eletrões e o de maior energia apenas 1 eletrão, de que elemento se trata?",
-            "opcoes": [
-              "Boro (Z = 5)",
-              "Lítio (Z = 3)",
-              "Carbono (Z = 6)",
-              "Berílio (Z = 4)"
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "O Lítio (Z=3) tem a configuração 1s² 2s¹, logo apresenta apenas 2 picos no espetro.",
-              "2": "O Carbono (Z=6) tem configuração 1s² 2s² 2p², logo o terceiro subnível teria 2 eletrões e não 1.",
-              "3": "O Berílio (Z=4) tem configuração 1s² 2s², apresentando apenas 2 picos."
-            },
-            "resolucao": "Cada pico no espetro PES corresponde a um subnível de energia ocupado. Temos 3 picos, logo 3 subníveis. As populações dadas indicam a configuração: 1s² (maior energia de remoção, 2 eletrões), 2s² (2 eletrões) e 2p¹ (menor energia de remoção, 1 eletrão). O total de eletrões é 5, correspondendo ao Boro."
+                    "id": "10q1sd3_4",
+                    "enunciado": "Selecione o elemento do 2º período que apresenta menor reatividade química.",
+                    "opcoes": [
+                              "Ne",
+                              "F",
+                              "Li",
+                              "Be"
+                    ],
+                    "correta": 0,
+                    "explicacoes": {
+                              "1": "O flúor é um dos elementos mais reativos da Tabela Periódica (halogéneo).",
+                              "2": "O lítio é um metal alcalino altamente reativo.",
+                              "3": "O berílio, embora menos reativo que o lítio, é consideravelmente reativo comparado com um gás nobre."
+                    },
+                    "resolucao": "O néon (Ne) pertence ao grupo 18 (gases nobres). Estes elementos apresentam enorme estabilidade química porque o seu último nível de energia encontra-se totalmente preenchido (no caso do Ne, configuração 2s² 2p⁶), pelo que têm uma reatividade química quase nula."
           },
           {
-            "id": 17,
-            "enunciado": "Qual dos seguintes diagramas ou distribuições para o subnível 2p do átomo de azoto (Z=7) no estado fundamental respeita a Regra de Hund?",
-            "opcoes": [
-              "Três eletrões desemparelhados, um em cada orbital p, com spins paralelos.",
-              "Dois eletrões emparelhados numa orbital p e um eletrão numa segunda orbital p.",
-              "Três eletrões desemparelhados com spins alternados.",
-              "Três eletrões na mesma orbital p."
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "Isto violaria a Regra de Hund, que dita que se deve maximizar o número de eletrões desemparelhados em orbitais degeneradas.",
-              "2": "Para minimizar a repulsão eletrónica, os spins dos eletrões desemparelhados devem ser paralelos (mesmo sentido).",
-              "3": "Isto viola o Princípio de Exclusão de Pauli, que determina um máximo de 2 eletrões por orbital."
-            },
-            "resolucao": "O Azoto tem configuração 1s² 2s² 2p³. No preenchimento de orbitais com a mesma energia (degeneradas, como as 3 orbitais p), a Regra de Hund estabelece que o estado de menor energia é aquele que tem o maior número de eletrões desemparelhados com spins paralelos."
+                    "id": "10q1sd3_5",
+                    "enunciado": "Considere as configurações eletrónicas, no estado fundamental, de quatro átomos: A: [Ne] 3s¹ ; B: [Ne] 3s² 3p² ; C: [Ar] 4s² 3d¹⁰ 4p⁵ ; D: [He] 2s² 2p⁴. Indique a opção correta.",
+                    "opcoes": [
+                              "Os elementos C e D pertencem ao mesmo grupo da Tabela Periódica.",
+                              "O elemento C tem 7 eletrões de valência.",
+                              "Os elementos A e B pertencem ao mesmo grupo da Tabela Periódica.",
+                              "O elemento D encontra-se no 4º período e grupo 16 da Tabela Periódica."
+                    ],
+                    "correta": 1,
+                    "explicacoes": {
+                              "0": "O elemento C (Br) está no grupo 17 e o D (O) no grupo 16.",
+                              "2": "O elemento A está no grupo 1 (1 eletrão de valência) e o B está no grupo 14 (4 eletrões de valência).",
+                              "3": "O elemento D ([He] 2s² 2p⁴) encontra-se no 2º período, não no 4º."
+                    },
+                    "resolucao": "O elemento C tem a configuração de valência 4s² 4p⁵ (os eletrões 3d não são de valência por ser um elemento representativo e o subnível estar completo), o que corresponde a 2 + 5 = 7 eletrões de valência."
           },
           {
-            "id": 18,
-            "enunciado": "Analise a configuração eletrónica: 1s² 2s² 2p⁶ 3s¹ 3p¹. Esta configuração corresponde a um átomo...",
-            "opcoes": [
-              "de magnésio (Z=12) num estado excitado.",
-              "de sódio (Z=11) no estado fundamental.",
-              "de magnésio (Z=12) no estado fundamental.",
-              "de alumínio (Z=13) num estado excitado."
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "O átomo tem 12 eletrões no total. O sódio tem apenas 11.",
-              "2": "No estado fundamental, o magnésio seria 1s² 2s² 2p⁶ 3s². O subnível 3s não está completo.",
-              "3": "O alumínio tem 13 eletrões no total, enquanto a configuração apresenta 12."
-            },
-            "resolucao": "O número total de eletrões é 2 + 2 + 6 + 1 + 1 = 12, indicando que se trata do elemento Magnésio (Z=12). Como o subnível 3s tem apenas 1 eletrão e há 1 eletrão num nível superior de energia (3p) sem que o 3s esteja preenchido, o Princípio da Construção não foi seguido, tratando-se de um estado excitado."
+                    "id": "10q1sd3_6",
+                    "enunciado": "Com base nas configurações A: [Ne] 3s¹ ; B: [Ne] 3s² 3p² ; C: [Ar] 4s² 3d¹⁰ 4p⁵ ; D: [He] 2s² 2p⁴, indique qual dos elementos tem maior energia de ionização.",
+                    "opcoes": [
+                              "A",
+                              "B",
+                              "C",
+                              "D"
+                    ],
+                    "correta": 3,
+                    "explicacoes": {
+                              "0": "O elemento A (grupo 1) tem a menor energia de ionização entre os apresentados.",
+                              "1": "O elemento B (grupo 14, 3º período) tem uma energia de ionização intermédia.",
+                              "2": "O elemento C está no 4º período, tendo uma nuvem eletrónica mais volumosa e os eletrões de valência menos atraídos pelo núcleo do que o elemento D no 2º período."
+                    },
+                    "resolucao": "O elemento D (Oxigénio) é o que se encontra no período mais baixo (2º período) e num grupo elevado (16). Como a energia de ionização aumenta da esquerda para a direita num período e de baixo para cima num grupo, D possui a maior energia de ionização."
           },
           {
-            "id": 19,
-            "enunciado": "O Princípio de Exclusão de Pauli estabelece que...",
-            "opcoes": [
-              "cada orbital atómica pode ser ocupada por um máximo de dois eletrões, que devem ter spins opostos.",
-              "os eletrões preenchem primeiramente os subníveis de menor energia disponível.",
-              "orbitais da mesma energia preenchem-se de modo a maximizar os eletrões desemparelhados.",
-              "é impossível determinar com precisão a posição e a velocidade de um eletrão simultaneamente."
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "Esta é a definição do Princípio da Construção (Aufbau).",
-              "2": "Esta é a definição da Regra de Hund.",
-              "3": "Este é o Princípio da Incerteza de Heisenberg."
-            },
-            "resolucao": "O Princípio de Pauli dita que dois eletrões num mesmo átomo não podem ter os quatro números quânticos iguais. Na prática, isto significa que uma orbital suporta no máximo dois eletrões, e estes têm obrigatoriamente de apresentar spins antiparalelos (opostos)."
+                    "id": "10q1sd3_7",
+                    "enunciado": "Os elementos do grupo 17 da Tabela Periódica designam-se por...",
+                    "opcoes": [
+                              "halogéneos e têm 7 eletrões de valência.",
+                              "calcogéneos e têm 7 eletrões de valência.",
+                              "halogéneos e têm 17 eletrões de valência.",
+                              "calcogéneos e têm 17 eletrões de valência."
+                    ],
+                    "correta": 0,
+                    "explicacoes": {
+                              "1": "Calcogéneos é o nome dado aos elementos do grupo 16.",
+                              "2": "Eles têm 7 eletrões de valência, pois a configuração de valência é do tipo ns² np⁵.",
+                              "3": "Calcogéneos são os do grupo 16 e um elemento representativo nunca pode ter 17 eletrões de valência (o máximo são 8)."
+                    },
+                    "resolucao": "A família do grupo 17 é a dos halogéneos. Os seus átomos apresentam configurações eletrónicas terminadas em ns² np⁵, totalizando 7 eletrões de valência."
           },
           {
-            "id": 20,
-            "enunciado": "Considere o átomo de enxofre (Z=16). Quantos eletrões de valência possui este átomo no estado fundamental?",
-            "opcoes": [
-              "6",
-              "4",
-              "16",
-              "2"
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "O valor 4 corresponde apenas aos eletrões do subnível 3p. Os eletrões do 3s também são de valência.",
-              "2": "16 é o número total de eletrões do átomo, não apenas os do último nível.",
-              "3": "Corresponde apenas aos eletrões do subnível 3s."
-            },
-            "resolucao": "A configuração eletrónica do enxofre é 1s² 2s² 2p⁶ 3s² 3p⁴. Os eletrões de valência são os que se encontram no nível de energia mais elevado (n=3). Somando os eletrões de 3s² e 3p⁴, obtemos 2 + 4 = 6 eletrões de valência."
+                    "id": "10q1sd3_8",
+                    "enunciado": "Considere posições arbitrárias na TP: X (grupo 1, per. 2); Y (grupo 2, per. 3); Z (grupo 14, per. 2); T (grupo 17, per. 2); W (grupo 16, per. 3); V (grupo 18, per. 4). Qual é verdadeira?",
+                    "opcoes": [
+                              "X e Y pertencem ao mesmo grupo.",
+                              "Z e T pertencem ao mesmo período.",
+                              "W é um gás nobre.",
+                              "V encontra-se no 3º período."
+                    ],
+                    "correta": 1,
+                    "explicacoes": {
+                              "0": "X pertence ao grupo 1 e Y ao grupo 2.",
+                              "2": "W encontra-se no grupo 16, correspondendo à família dos calcogéneos. Os gases nobres encontram-se no grupo 18.",
+                              "3": "V encontra-se no 4º período, não no 3º."
+                    },
+                    "resolucao": "Z e T pertencem ambos ao 2º período, que corresponde à segunda linha horizontal da Tabela Periódica. As restantes afirmações são falsas de acordo com a posição descrita."
           },
           {
-            "id": 21,
-            "enunciado": "Relativamente à forma das orbitais atómicas (regiões de maior probabilidade de encontrar o eletrão), é correto afirmar que:",
-            "opcoes": [
-              "as orbitais s têm simetria esférica e as orbitais p são bilobulares.",
-              "todas as orbitais do nível de energia n=2 apresentam a mesma forma.",
-              "uma orbital d pode conter um máximo de 10 eletrões.",
-              "a nuvem eletrónica apresenta fronteiras rígidas e bem definidas."
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "No nível n=2 existem orbitais s (esféricas) e p (bilobulares), logo não têm a mesma forma.",
-              "2": "Um *subnível* d suporta até 10 eletrões (5 orbitais), mas *uma única orbital* d suporta apenas 2 eletrões.",
-              "3": "A nuvem eletrónica não tem limites físicos rígidos, é um modelo probabilístico que se estende até ao infinito."
-            },
-            "resolucao": "O tipo de orbital define a sua forma espacial. As orbitais s (l=0) têm forma esférica em torno do núcleo. As orbitais p (l=1) são formadas por dois lobos de probabilidade (forma de haltere) orientados ao longo dos eixos cartesianos (px, py, pz)."
+                    "id": "10q1sd3_9",
+                    "enunciado": "Considerando os elementos X (grupo 1, per. 2) e T (grupo 17, per. 2), as suas configurações eletrónicas de valência são, respetivamente...",
+                    "opcoes": [
+                              "ns¹ e ns² np⁵",
+                              "ns¹ e ns² np⁶",
+                              "ns² e ns² np⁵",
+                              "ns² e ns² np⁶"
+                    ],
+                    "correta": 0,
+                    "explicacoes": {
+                              "1": "ns² np⁶ corresponde aos gases nobres (grupo 18), e não ao grupo 17.",
+                              "2": "ns² corresponde aos metais alcalinoterrosos (grupo 2), e não ao grupo 1.",
+                              "3": "Nenhuma das configurações estaria correta para os grupos 1 e 17."
+                    },
+                    "resolucao": "O elemento X, estando no grupo 1, possui 1 eletrão de valência (configuração ns¹). O elemento T, estando no grupo 17, possui 7 eletrões de valência distribuídos pelas orbitais s e p (configuração ns² np⁵)."
           },
           {
-            "id": 22,
-            "enunciado": "Um átomo emite um fotão quando um eletrão transita de um nível de maior energia para um de menor energia. Se a diferença de energia entre os níveis envolvidos for muito elevada, a radiação emitida terá...",
-            "opcoes": [
-              "maior frequência e menor comprimento de onda.",
-              "menor frequência e maior comprimento de onda.",
-              "maior frequência e maior comprimento de onda.",
-              "a mesma frequência independentemente da energia."
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "Menor frequência significa menor energia, o que contradiz a \"diferença de energia muito elevada\".",
-              "2": "Frequência e comprimento de onda são inversamente proporcionais. Se a frequência é maior, o comprimento de onda tem de ser menor.",
-              "3": "A frequência está diretamente ligada à energia através da relação E = hf."
-            },
-            "resolucao": "A energia de um fotão é diretamente proporcional à sua frequência (E = hf, onde h é a constante de Planck) e inversamente proporcional ao seu comprimento de onda (E = hc/λ). Portanto, transições muito energéticas emitem fotões de alta frequência e baixo comprimento de onda."
+                    "id": "10q1sd3_10",
+                    "enunciado": "A energia de ionização de um átomo de boro (B) é menor do que a de um átomo de berílio (Be). Qual das seguintes opções justifica este facto?",
+                    "opcoes": [
+                              "O boro tem maior número atómico do que o berílio.",
+                              "O eletrão a remover no boro encontra-se num nível de energia superior ao do berílio.",
+                              "O eletrão a remover no boro encontra-se numa orbital p, que tem maior energia do que a orbital s onde se encontra o eletrão a remover do berílio.",
+                              "O boro tem maior raio atómico do que o berílio."
+                    ],
+                    "correta": 2,
+                    "explicacoes": {
+                              "0": "O facto de o boro ter maior número atómico normalmente faria com que a sua energia de ionização fosse maior (tendência geral), não justificando esta inversão.",
+                              "1": "Ambos têm eletrões a remover no mesmo nível de energia (n=2).",
+                              "3": "O boro tem menor raio atómico do que o berílio, pois está mais à direita no período."
+                    },
+                    "resolucao": "A configuração eletrónica do Be é 1s² 2s² e a do B é 1s² 2s² 2p¹. No B, o eletrão a remover encontra-se na orbital 2p, cuja energia é ligeiramente superior à da orbital 2s. Logo, esse eletrão do B encontra-se menos firmemente atraído ao núcleo do que o eletrão 2s do Be, o que torna a energia necessária para a sua remoção inferior."
           },
           {
-            "id": 23,
-            "enunciado": "Para um átomo de Oxigénio (Z=8) no estado fundamental, as energias de remoção eletrónica avaliadas por PES revelaram três valores: 52,6 MJ/mol, 3,12 MJ/mol e 1,31 MJ/mol. O valor de 52,6 MJ/mol corresponde à remoção de um eletrão da orbital...",
-            "opcoes": [
-              "1s",
-              "2s",
-              "2p",
-              "3s"
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "Os eletrões 2s estão mais afastados do núcleo do que os 1s, logo a sua energia de remoção (ligação) é menor (3,12 MJ/mol).",
-              "2": "Os eletrões 2p são os menos fortemente ligados ao núcleo (último subnível), tendo a menor energia de remoção (1,31 MJ/mol).",
-              "3": "O oxigénio no estado fundamental não tem eletrões na orbital 3s."
-            },
-            "resolucao": "A energia de remoção é tanto maior quanto maior for a força de atração núcleo-eletrão. Os eletrões do subnível 1s são os que se encontram mais próximos do núcleo, sofrendo maior atração e, por conseguinte, requerendo a energia máxima (52,6 MJ/mol) para serem ejetados."
-          },
-          {
-            "id": 24,
-            "enunciado": "Qual a relação que permite calcular a energia de um fotão de luz visível a partir da sua frequência (f)?",
-            "opcoes": [
-              "E = h × f",
-              "E = c / f",
-              "E = h / f",
-              "E = m × c²"
-            ],
-            "correta": 0,
-            "explicacoes": {
-              "1": "c / f dá-nos o comprimento de onda (λ), não a energia.",
-              "2": "A constante de Planck é multiplicada, e não dividida, pela frequência.",
-              "3": "Equação de Einstein para a equivalência massa-energia, não a energia de um fotão em função da sua frequência."
-            },
-            "resolucao": "A Hipótese de Planck postula que a energia da radiação é quantizada e calcula-se pela expressão E = h × f, em que 'E' é a energia do fotão, 'h' a constante de Planck e 'f' a frequência da radiação."
+                    "id": "10q1sd3_11",
+                    "enunciado": "Qual dos seguintes átomos apresenta o menor raio atómico?",
+                    "opcoes": [
+                              "O",
+                              "S",
+                              "F",
+                              "Cℓ"
+                    ],
+                    "correta": 2,
+                    "explicacoes": {
+                              "0": "O oxigénio está à esquerda do flúor no mesmo período, logo tem menor carga nuclear efetiva e maior raio atómico.",
+                              "1": "O enxofre encontra-se num período inferior (3º), logo tem um nível adicional ocupado, resultando num raio maior.",
+                              "3": "O cloro, embora no mesmo grupo que o flúor, encontra-se num período inferior (3º), pelo que tem maior raio."
+                    },
+                    "resolucao": "O oxigénio e o flúor estão no 2º período, enquanto o enxofre e o cloro estão no 3º. Assim, os dois primeiros têm raios menores. No 2º período, como o flúor se encontra num grupo mais elevado (grupo 17), a sua maior carga nuclear efetiva atrai mais a nuvem eletrónica, o que lhe confere um menor raio atómico comparativamente ao oxigénio."
           }
-        ],
-        "SD3 Tabela Periódica": []
+        ]
       },
       "Domínio 2: Propriedades e transformações da matéria": {
-        "SD4 Ligação química": [],
+        "SD4 Ligação química": [
+          {
+                    "id": "10q2sd4_1",
+                    "enunciado": "A molécula de CO₂ apresenta geometria linear porque...",
+                    "opcoes": [
+                              "é uma molécula triatómica.",
+                              "é uma molécula simétrica.",
+                              "não existem eletrões de valência não ligantes no átomo de carbono.",
+                              "existem eletrões de valência não ligantes nos átomos de oxigénio."
+                    ],
+                    "correta": 2,
+                    "explicacoes": {
+                              "0": "A água também é triatómica, no entanto, apresenta geometria angular devido aos pares não ligantes no oxigénio.",
+                              "1": "A simetria é uma consequência da geometria linear e da presença de átomos iguais nas extremidades, não a causa da linearidade pelo modelo TRPEV.",
+                              "3": "Os pares não ligantes presentes nos átomos periféricos (oxigénio) não afetam a geometria em torno do átomo central (carbono)."
+                    },
+                    "resolucao": "Segundo o modelo TRPEV (VSEPR), a geometria é determinada pelas repulsões entre os domínios de eletrões do átomo central. No CO₂, o carbono não possui pares de eletrões não ligantes e estabelece dois domínios ligantes (duas ligações duplas), que se repelem ao máximo, originando um ângulo de 180° e uma geometria linear."
+          },
+          {
+                    "id": "10q2sd4_2",
+                    "enunciado": "Quantos eletrões de valência existem, no total, na molécula de metanol (H₃C–OH)?",
+                    "opcoes": [
+                              "10",
+                              "14",
+                              "7",
+                              "5"
+                    ],
+                    "correta": 1,
+                    "explicacoes": {
+                              "0": "10 corresponde ao número total de eletrões num átomo de néon ou na molécula de água, não aos eletrões de valência do metanol.",
+                              "2": "7 poderia referir-se a uma contagem errada ou a um halogéneo, mas não se aplica à soma dos eletrões de valência da molécula.",
+                              "3": "5 é o número de pares ligantes na molécula (cinco ligações covalentes simples), não o número de eletrões de valência."
+                    },
+                    "resolucao": "O carbono (grupo 14) possui 4 eletrões de valência. O oxigénio (grupo 16) tem 6 eletrões de valência. Cada hidrogénio (grupo 1) tem 1 eletrão. Como a molécula tem 4 hidrogénios, a soma total é: 4 (do C) + 6 (do O) + 4x1 (dos H) = 14 eletrões de valência."
+          },
+          {
+                    "id": "10q2sd4_3",
+                    "enunciado": "Comparando as ligações simples C–C e duplas C=C, a ligação C=C apresenta...",
+                    "opcoes": [
+                              "maior energia de ligação e menor comprimento de ligação.",
+                              "menor energia de ligação e menor comprimento de ligação.",
+                              "maior energia de ligação e maior comprimento de ligação.",
+                              "menor energia de ligação e maior comprimento de ligação."
+                    ],
+                    "correta": 0,
+                    "explicacoes": {
+                              "1": "A energia de ligação é maior na ligação dupla e não menor, porque há mais eletrões partilhados a manter os núcleos unidos.",
+                              "2": "O comprimento da ligação dupla não é maior; os núcleos estão mais próximos devido à maior atração da nuvem eletrónica.",
+                              "3": "A afirmação é completamente oposta à realidade: a ligação dupla é mais forte e os átomos estão mais próximos."
+                    },
+                    "resolucao": "Uma ligação covalente dupla envolve a partilha de mais eletrões (4) do que uma ligação simples (2). Isto aumenta consideravelmente a atração eletrostática entre os núcleos positivos e a nuvem eletrónica partilhada. Como resultado, é necessária mais energia para quebrar a ligação (maior energia de ligação) e os núcleos aproximam-se mais um do outro (menor comprimento de ligação)."
+          },
+          {
+                    "id": "10q2sd4_4",
+                    "enunciado": "Na molécula de H₂O existem, no total, ___ pares de eletrões de valência, dos quais, ___ pares são não ligantes.",
+                    "opcoes": [
+                              "oito ... três",
+                              "quatro ... dois",
+                              "oito ... dois",
+                              "quatro ... três"
+                    ],
+                    "correta": 1,
+                    "explicacoes": {
+                              "0": "A molécula tem 8 eletrões de valência, o que equivale a 4 pares, não a 8 pares.",
+                              "2": "Têm no total 4 pares (8 eletrões), não 8 pares.",
+                              "3": "Existem apenas 2 pares não ligantes alojados no oxigénio, não 3."
+                    },
+                    "resolucao": "A água (H₂O) tem 8 eletrões de valência no total (6 do oxigénio + 2 do hidrogénio), o que corresponde a 4 pares. O oxigénio é o átomo central que partilha 2 eletrões simples com 2 hidrogénios (formando 2 pares ligantes) e fica com os restantes 4 eletrões na forma de 2 pares de eletrões não ligantes."
+          },
+          {
+                    "id": "10q2sd4_5",
+                    "enunciado": "A fórmula de estrutura (notação de Lewis) da molécula de dióxido de carbono, CO₂, revela que a molécula tem...",
+                    "opcoes": [
+                              "2 pares de eletrões não ligantes em torno de cada átomo de oxigénio.",
+                              "8 pares de eletrões ligantes.",
+                              "4 eletrões ligantes e 4 eletrões não ligantes.",
+                              "2 pares de eletrões ligantes e 6 pares de eletrões não ligantes."
+                    ],
+                    "correta": 0,
+                    "explicacoes": {
+                              "1": "A molécula possui 4 pares de eletrões ligantes no total (duas ligações duplas), e não 8 pares ligantes.",
+                              "2": "A molécula tem 8 eletrões ligantes (4 pares) e 8 eletrões não ligantes (4 pares), e não apenas 4 de cada.",
+                              "3": "Tem 4 pares de eletrões ligantes (2 em cada ligação C=O) e 4 pares não ligantes (2 em cada oxigénio)."
+                    },
+                    "resolucao": "Na estrutura de Lewis do CO₂ (O=C=O), o carbono central forma duas ligações duplas. Cada ligação dupla contém 2 pares de eletrões (logo, há 4 pares ligantes no total). O oxigénio, para completar o octeto, mantém 4 eletrões não partilhados em cada átomo, o que corresponde a 2 pares de eletrões não ligantes por cada átomo de oxigénio."
+          },
+          {
+                    "id": "10q2sd4_6",
+                    "enunciado": "Um átomo de um certo elemento X tem a configuração eletrónica 1s² 2s² 2p⁵ no estado fundamental. Com base nesta configuração, podemos concluir que este elemento...",
+                    "opcoes": [
+                              "é um metal.",
+                              "tende a formar iões X²⁺.",
+                              "forma moléculas diatómicas.",
+                              "forma, com o hidrogénio, um composto iónico."
+                    ],
+                    "correta": 2,
+                    "explicacoes": {
+                              "0": "Elementos com 7 eletrões de valência pertencem ao grupo 17, pelo que são não-metais muito reativos.",
+                              "1": "Por ter 7 eletrões de valência, tende a captar 1 eletrão para completar o octeto, formando iões X⁻, e não X²⁺.",
+                              "3": "Sendo um não-metal, com o hidrogénio (também um não-metal) irá partilhar eletrões, formando um composto com ligações covalentes."
+                    },
+                    "resolucao": "O elemento possui 7 eletrões de valência (configuração 2s² 2p⁵), o que indica que pertence à família dos halogéneos (grupo 17), como por exemplo o flúor. Estes não-metais estabilizam-se frequentemente ligando-se a outro átomo igual, partilhando um par de eletrões para completar o octeto, formando moléculas diatómicas (X₂)."
+          },
+          {
+                    "id": "10q2sd4_7",
+                    "enunciado": "A geometria da molécula de etano (CH₃–CH₃), em torno de cada um dos átomos de carbono, é aproximadamente...",
+                    "opcoes": [
+                              "tetraédrica em torno de um e piramidal em torno do outro.",
+                              "tetraédrica em torno de ambos.",
+                              "piramidal em torno de ambos.",
+                              "nenhuma das anteriores."
+                    ],
+                    "correta": 1,
+                    "explicacoes": {
+                              "0": "Ambos os carbonos na molécula de etano estão no mesmo tipo de ambiente eletrónico (ligados a 4 átomos).",
+                              "2": "A geometria piramidal implica a existência de 1 par não ligante no átomo central com 3 pares ligantes (como no NH₃). Os carbonos do etano não têm pares não ligantes.",
+                              "3": "A geometria tetraédrica é a reposta correta para carbonos com 4 ligações simples."
+                    },
+                    "resolucao": "Na molécula de etano, cada átomo de carbono forma 4 ligações covalentes simples (3 ligam a átomos de hidrogénio e 1 liga ao outro átomo de carbono) e não possui quaisquer pares de eletrões não ligantes. Segundo a teoria da repulsão dos pares de eletrões de valência (TRPEV), 4 domínios ligantes repelem-se para os vértices de um tetraedro regular, originando uma geometria tetraédrica em torno de ambos os átomos de carbono."
+          },
+          {
+                    "id": "10q2sd4_8",
+                    "enunciado": "O metano, CH₄, é o componente principal do gás natural. O tipo de ligações intermoleculares que se estabelece entre moléculas de metano e a sua geometria espacial são, respetivamente...",
+                    "opcoes": [
+                              "ligações de hidrogénio e geometria tetraédrica.",
+                              "ligações covalentes e geometria tetraédrica.",
+                              "ligações de van der Waals e geometria piramidal trigonal.",
+                              "ligações de van der Waals e geometria tetraédrica."
+                    ],
+                    "correta": 3,
+                    "explicacoes": {
+                              "0": "Para formar ligações de hidrogénio, o hidrogénio teria de estar ligado a átomos muito eletronegativos como F, O ou N. No metano está ligado ao carbono.",
+                              "1": "As ligações covalentes são intramoleculares (dentro da molécula). As ligações entre moléculas são forças intermoleculares.",
+                              "2": "A geometria do metano não é piramidal. A geometria piramidal exige um par de eletrões não ligante no átomo central."
+                    },
+                    "resolucao": "O carbono no metano faz 4 ligações simples com os hidrogénios e não tem pares de eletrões não ligantes, resultando numa geometria espacial tetraédrica. Devido à sua elevada simetria e à baixa diferença de eletronegatividade entre C e H, o CH₄ é uma molécula apolar. Consequentemente, as únicas interações que ocorrem entre as suas moléculas são as forças de dispersão de London, que integram o grupo das forças de van der Waals."
+          },
+          {
+                    "id": "10q2sd4_9",
+                    "enunciado": "A maior ou menor intensidade das forças intermoleculares determina o estado físico da matéria. Podemos afirmar que...",
+                    "opcoes": [
+                              "em condições-padrão, o Cl₂ é gás, o Br₂ é líquido e o I₂ é sólido, porque as forças intermoleculares no I₂ são mais intensas do que no Br₂, e estas mais intensas do que no Cl₂.",
+                              "as forças intermoleculares entre moléculas de éter etílico são mais fortes do que no álcool etílico.",
+                              "o ponto de ebulição do metano é superior ao ponto de ebulição do metanol.",
+                              "o metanol e a água são líquidos imiscíveis."
+                    ],
+                    "correta": 0,
+                    "explicacoes": {
+                              "1": "O álcool etílico tem um grupo -OH que forma ligações de hidrogénio altamente coesivas; o éter não as forma entre as suas moléculas, logo as forças no álcool são muito mais fortes.",
+                              "2": "O metanol faz ligações de hidrogénio (fortes), logo o seu ponto de ebulição é muito mais elevado do que o do metano (que só faz forças de London, fracas).",
+                              "3": "O metanol dissolve-se perfeitamente na água (são miscíveis) porque ambas as substâncias formam ligações de hidrogénio entre si."
+                    },
+                    "resolucao": "Os halogéneos (Cl₂, Br₂, I₂) são moléculas elementares diatómicas e, por isso, apolares. Interagem apenas por forças de dispersão de London. A intensidade destas forças de van der Waals aumenta com o número de eletrões da molécula (maior polarizabilidade). O I₂ tem a maior nuvem eletrónica, logo interage de forma tão intensa que é sólido; o Br₂ tem força intermédia (líquido) e o Cl₂ é um gás."
+          },
+          {
+                    "id": "10q2sd4_10",
+                    "enunciado": "Sobre a polaridade de moléculas e geometria, selecione a afirmação verdadeira.",
+                    "opcoes": [
+                              "Uma molécula com ligações polares é sempre uma molécula polar.",
+                              "A classificação de uma molécula em polar ou apolar é determinada pela polaridade das ligações e pela sua geometria da molecular.",
+                              "As moléculas H₂O e BeH₂ têm geometrias moleculares semelhantes, logo, ambas são moléculas apolares.",
+                              "A molécula do metanol (CH₃OH) é apolar."
+                    ],
+                    "correta": 1,
+                    "explicacoes": {
+                              "0": "Se a molécula tiver ligações polares mas for perfeitamente simétrica (como o CO₂ ou CH₄), os momentos dipolares anulam-se e a molécula é globalmente apolar.",
+                              "2": "A H₂O tem geometria angular (polar) devido aos pares não ligantes do O, enquanto o BeH₂ é linear (apolar). As geometrias não são semelhantes.",
+                              "3": "O metanol é fortemente polar devido à presença do grupo hidroxilo (-OH), que gera uma assimetria na distribuição de carga eletrónica."
+                    },
+                    "resolucao": "Para determinar se uma molécula é polar, não basta que esta apresente ligações covalentes polares (onde os átomos têm diferentes eletronegatividades). É crucial analisar a sua geometria espacial. Caso a geometria molecular não seja simétrica (por exemplo por presença de pares não ligantes ou ligandos diferentes), a soma dos vetores dos momentos dipolares das ligações não é nula, tornando a molécula polar."
+          },
+          {
+                    "id": "10q2sd4_11",
+                    "enunciado": "A geometria de uma molécula depende do tipo e do número de domínios eletrónicos. Qual dos seguintes pares apresenta o mesmo tipo de geometria molecular?",
+                    "opcoes": [
+                              "H₂O e CO₂",
+                              "NH₃ e BH₃",
+                              "NH₃ e H₃O⁺",
+                              "CO₂ e SO₂"
+                    ],
+                    "correta": 2,
+                    "explicacoes": {
+                              "0": "A H₂O é angular (2 pares ligantes, 2 não ligantes) e o CO₂ é linear (2 domínios ligantes duplos, 0 não ligantes).",
+                              "1": "O NH₃ é piramidal trigonal (3 pares ligantes, 1 não ligante) e o BH₃ é trigonal planar (3 pares ligantes, 0 não ligantes).",
+                              "3": "O CO₂ é linear e o SO₂ é angular (tem 1 par não ligante no enxofre central)."
+                    },
+                    "resolucao": "Tanto na molécula de amoníaco (NH₃) como no ião oxónio (H₃O⁺), o átomo central (N e O, respetivamente) estabelece três ligações simples com os hidrogénios e possui exatamente 1 par de eletrões não ligante. Com 4 domínios no total, a sua distribuição eletrónica é tetraédrica, mas como apenas 3 são ligantes, a sua geometria molecular real assume a forma piramidal trigonal para ambas as espécies."
+          }
+        ],
         "SD5 Gases e dispersões": [],
         "SD6 Transformações químicas": []
       }
@@ -445,9 +429,12 @@ const dataCompleto = {
     "Química": {
       "Domínio 1: Equilíbrio Químico": {
         "SD1 Aspetos quantitativos das reações químicas": [],
-        "SD2 Estado de equilíbrio e sua alteração": [],
-        "SD3 Reações ácido-base": [],
-        "SD4 Reações de oxidação-redução": []
+        "SD2 Estado de equilíbrio e sua alteração": []
+      },
+      "Domínio 2: Reações em sistemas aquosos": {
+        "SD3 Ácido-base": [],
+        "SD4 Oxidação-redução": [],
+        "SD5 Solubilidade": []
       }
     }
   }
