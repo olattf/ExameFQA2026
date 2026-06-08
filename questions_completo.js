@@ -1,4 +1,4 @@
-const quizData = {
+const dataCompleto = {
   "10": {
     "Física": {
       "Domínio 1: Energia e sua conservação": {
