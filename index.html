@@ -82,11 +82,11 @@
             <div class="sidebar-header">
                 <div>Progresso do Estudo</div>
                 <div id="mode-badge-container"></div>
+                <div id="sidebar-footer-area" style="display:none; margin-top: 10px;">
+                    <button class="btn-reset" onclick="triggerFullReset()">🗑️ Apagar Todo o Progresso</button>
+                </div>
             </div>
             <div class="sidebar-content" id="sidebar-content"></div>
-            <div class="sidebar-footer" id="sidebar-footer-area" style="display:none;">
-                <button class="btn-reset" onclick="triggerFullReset()">Apagar Todo o Progresso</button>
-            </div>
         </aside>
         <div class="main-wrapper">
             <div class="content-area">
@@ -95,7 +95,11 @@
                     <div id="app-content"></div>
                 </div>
             </div>
-            <footer class="footer">Desenvolvido por @olattf</footer>
+            <footer class="footer">
+                Desenvolvido por <strong style="color: var(--text-color);">@olattf</strong> com o auxílio do <strong style="color: var(--accent-color);">Claude</strong> (Anthropic)
+                <span style="margin: 0 8px; color: var(--border-color);">·</span>
+                Exercícios retirados do <em>Manual de Preparação de Exame FQA 2026</em> da <strong style="color: var(--text-color);">Porto Editora</strong>
+            </footer>
         </div>
     </div>
 
