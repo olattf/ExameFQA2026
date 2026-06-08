@@ -19,308 +19,55 @@
             --partial-color: #2f81f7;
             --accent-color: #f08c00;
         }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        /* Layout Principal */
-        .layout {
-            display: flex;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Barra Lateral (Sidebar) */
-        .sidebar {
-            width: 300px;
-            background-color: var(--sidebar-bg);
-            border-right: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-        }
-
-        .sidebar-header {
-            padding: 20px;
-            border-bottom: 1px solid var(--border-color);
-            font-weight: bold;
-            font-size: 16px;
-            color: #f0f6fc;
-        }
-
-        .sidebar-content {
-            padding: 15px;
-            flex: 1;
-        }
-
-        .sb-mode-badge {
-            display: inline-block;
-            font-size: 11px;
-            background-color: var(--button-bg);
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-top: 5px;
-            color: var(--accent-color);
-            border: 1px solid var(--border-color);
-        }
-
+        body { background-color: var(--bg-color); color: var(--text-color); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; margin: 0; display: flex; height: 100vh; overflow: hidden; }
+        .layout { display: flex; width: 100%; height: 100%; }
+        .sidebar { width: 300px; background-color: var(--sidebar-bg); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; overflow-y: auto; }
+        .sidebar-header { padding: 20px; border-bottom: 1px solid var(--border-color); font-weight: bold; font-size: 16px; color: #f0f6fc; }
+        .sidebar-content { padding: 15px; flex: 1; }
+        .sb-mode-badge { display: inline-block; font-size: 11px; background-color: var(--button-bg); padding: 2px 6px; border-radius: 4px; margin-top: 5px; color: var(--accent-color); border: 1px solid var(--border-color); }
         .sb-year { font-weight: bold; margin-top: 15px; margin-bottom: 5px; color: #f0f6fc; }
         .sb-subject { font-weight: 600; margin-left: 10px; margin-top: 10px; color: var(--text-color); }
         .sb-domain { font-size: 14px; margin-left: 20px; margin-top: 8px; color: var(--text-muted); }
-        .sb-sub { 
-            font-size: 13px; 
-            margin-left: 30px; 
-            margin-top: 5px; 
-            display: flex; 
-            align-items: center; 
-            gap: 8px;
-            color: var(--text-muted);
-        }
-
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            display: inline-block;
-            flex-shrink: 0;
-        }
-
+        .sb-sub { font-size: 13px; margin-left: 30px; margin-top: 5px; display: flex; align-items: center; gap: 8px; color: var(--text-muted); }
+        .status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
         .status-none { background-color: transparent; border: 1px solid var(--text-muted); }
         .status-partial { background-color: var(--partial-color); border: 1px solid var(--partial-color); }
         .status-complete { background-color: var(--correct-color); border: 1px solid var(--correct-color); }
-
-        .sidebar-footer {
-            padding: 15px;
-            border-top: 1px solid var(--border-color);
-            background-color: rgba(0,0,0,0.2);
-        }
-
-        /* Área de Conteúdo Central */
-        .main-wrapper {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        .content-area {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-        }
-
-        .container {
-            background-color: var(--container-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 30px;
-            width: 100%;
-            max-width: 700px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-        }
-
-        /* Rodapé */
-        .footer {
-            text-align: center;
-            padding: 15px;
-            color: var(--text-muted);
-            font-size: 13px;
-            border-top: 1px solid var(--border-color);
-            background-color: var(--container-bg);
-        }
-
-        /* Modo de Seleção Inicial (Grandes Opções) */
-        .mode-selection {
-            text-align: center;
-        }
-
-        .mode-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .mode-card {
-            background-color: var(--button-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 30px 20px;
-            cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s, background-color 0.2s;
-            text-align: center;
-        }
-
-        .mode-card:hover {
-            border-color: var(--accent-color);
-            background-color: var(--button-hover);
-            transform: translateY(-2px);
-        }
-
-        .mode-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .mode-card h3 {
-            margin: 0 0 10px 0;
-            font-size: 20px;
-            color: #f0f6fc;
-        }
-
-        .mode-card p {
-            margin: 0;
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        .warning-box {
-            background-color: rgba(240, 140, 0, 0.1);
-            border: 1px solid rgba(240, 140, 0, 0.4);
-            color: #ffb54d;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 13px;
-            line-height: 1.5;
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        /* Elementos da Aplicação */
-        h1 {
-            color: #f0f6fc;
-            margin-top: 0;
-            font-size: 22px;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-        }
-
+        .sidebar-footer { padding: 15px; border-top: 1px solid var(--border-color); background-color: rgba(0,0,0,0.2); }
+        .main-wrapper { flex: 1; display: flex; flex-direction: column; overflow-y: auto; position: relative; }
+        .content-area { flex: 1; display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
+        .container { background-color: var(--container-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 30px; width: 100%; max-width: 700px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        .footer { text-align: center; padding: 15px; color: var(--text-muted); font-size: 13px; border-top: 1px solid var(--border-color); background-color: var(--container-bg); }
+        .mode-selection { text-align: center; }
+        .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .mode-card { background-color: var(--button-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 30px 20px; cursor: pointer; transition: transform 0.2s, border-color 0.2s, background-color 0.2s; text-align: center; }
+        .mode-card:hover { border-color: var(--accent-color); background-color: var(--button-hover); transform: translateY(-2px); }
+        .mode-icon { font-size: 40px; margin-bottom: 15px; display: block; }
+        .mode-card h3 { margin: 0 0 10px 0; font-size: 20px; color: #f0f6fc; }
+        .mode-card p { margin: 0; font-size: 14px; color: var(--text-muted); line-height: 1.4; }
+        .warning-box { background-color: rgba(240, 140, 0, 0.1); border: 1px solid rgba(240, 140, 0, 0.4); color: #ffb54d; padding: 15px; border-radius: 6px; font-size: 13px; line-height: 1.5; margin-top: 20px; text-align: left; }
+        h1 { color: #f0f6fc; margin-top: 0; font-size: 22px; text-align: center; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 15px; }
         h2, h3 { color: #f0f6fc; margin-top: 0; }
-
-        .menu-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .btn {
-            background-color: var(--button-bg);
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            padding: 12px 20px;
-            font-size: 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            text-align: left;
-            transition: background-color 0.2s, border-color 0.2s;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .btn:hover:not(:disabled) {
-            background-color: var(--button-hover);
-            border-color: #8b949e;
-        }
-
+        .menu-grid { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+        .btn { background-color: var(--button-bg); color: var(--text-color); border: 1px solid var(--border-color); padding: 12px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; text-align: left; transition: background-color 0.2s, border-color 0.2s; width: 100%; box-sizing: border-box; }
+        .btn:hover:not(:disabled) { background-color: var(--button-hover); border-color: #8b949e; }
         .btn:disabled { opacity: 0.6; cursor: not-allowed; }
         .btn.correct { background-color: var(--correct-color); border-color: var(--correct-color); color: #ffffff; }
         .btn.incorrect { background-color: var(--incorrect-color); border-color: var(--incorrect-color); color: #ffffff; }
-
-        .breadcrumb {
-            font-size: 13px;
-            color: var(--text-muted);
-            background-color: rgba(48, 54, 61, 0.2);
-            padding: 8px 12px;
-            border-radius: 4px;
-            border: 1px solid rgba(48, 54, 61, 0.5);
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-
+        .breadcrumb { font-size: 13px; color: var(--text-muted); background-color: rgba(48, 54, 61, 0.2); padding: 8px 12px; border-radius: 4px; border: 1px solid rgba(48, 54, 61, 0.5); margin-bottom: 20px; line-height: 1.4; }
         .options-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
-
-        .feedback-box {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 15px;
-            line-height: 1.6;
-            display: none;
-            white-space: pre-line;
-        }
-
+        .feedback-box { margin-top: 20px; padding: 15px; border-radius: 6px; font-size: 15px; line-height: 1.6; display: none; white-space: pre-line; }
         .feedback-box.wrong { background-color: rgba(218, 54, 51, 0.1); border: 1px solid var(--incorrect-color); color: #ff7b72; }
         .feedback-box.right { background-color: rgba(35, 134, 54, 0.1); border: 1px solid var(--correct-color); color: #56d364; }
-
         .action-area { margin-top: 25px; display: flex; justify-content: flex-end; }
         .btn-next { background-color: #238636; color: #ffffff; border: 1px solid rgba(240,246,252,0.1); padding: 10px 20px; font-weight: 600; text-align: center; }
         .btn-next:hover { background-color: #2ea043; }
-
-        .navigation-controls {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn-nav {
-            background: transparent;
-            color: var(--text-muted);
-            border: 1px solid var(--border-color);
-            padding: 8px 14px;
-            font-size: 14px;
-            border-radius: 6px;
-            cursor: pointer;
-            flex: 1;
-            text-align: center;
-        }
-
+        .navigation-controls { margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-color); display: flex; gap: 10px; }
+        .btn-nav { background: transparent; color: var(--text-muted); border: 1px solid var(--border-color); padding: 8px 14px; font-size: 14px; border-radius: 6px; cursor: pointer; flex: 1; text-align: center; }
         .btn-nav:hover { color: var(--text-color); border-color: #8b949e; background-color: var(--button-bg); }
-
-        .btn-reset {
-            background-color: rgba(218, 54, 51, 0.1);
-            color: #ff7b72;
-            border: 1px solid rgba(218, 54, 51, 0.4);
-            padding: 8px 12px;
-            font-size: 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: 600;
-            transition: background-color 0.2s;
-        }
-
-        .btn-reset:hover {
-            background-color: var(--incorrect-color);
-            color: #ffffff;
-        }
-
-        .completed-badge {
-            float: right;
-            font-size: 12px;
-            background-color: rgba(35, 134, 54, 0.2);
-            color: #56d364;
-            padding: 2px 8px;
-            border-radius: 12px;
-            border: 1px solid var(--correct-color);
-        }
-
+        .btn-reset { background-color: rgba(218, 54, 51, 0.1); color: #ff7b72; border: 1px solid rgba(218, 54, 51, 0.4); padding: 8px 12px; font-size: 12px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: 600; transition: background-color 0.2s; }
+        .btn-reset:hover { background-color: var(--incorrect-color); color: #ffffff; }
+        .completed-badge { float: right; font-size: 12px; background-color: rgba(35, 134, 54, 0.2); color: #56d364; padding: 2px 8px; border-radius: 12px; border: 1px solid var(--correct-color); }
         @media (max-width: 768px) {
             .layout { flex-direction: column; }
             .sidebar { width: 100%; height: 200px; border-right: none; border-bottom: 1px solid var(--border-color); }
@@ -330,43 +77,203 @@
     </style>
 </head>
 <body>
-
     <div class="layout">
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div>Progresso do Estudo</div>
                 <div id="mode-badge-container"></div>
             </div>
-            <div class="sidebar-content" id="sidebar-content">
-            </div>
+            <div class="sidebar-content" id="sidebar-content"></div>
             <div class="sidebar-footer" id="sidebar-footer-area" style="display:none;">
                 <button class="btn-reset" onclick="triggerFullReset()">Apagar Todo o Progresso</button>
             </div>
         </aside>
-
         <div class="main-wrapper">
             <div class="content-area">
                 <div class="container">
                     <h1>Preparação Exame Física e Química A 2026</h1>
-                    <div id="app-content">
-                    </div>
+                    <div id="app-content"></div>
                 </div>
             </div>
-            <footer class="footer">
-                Desenvolvido por @olattf
-            </footer>
+            <footer class="footer">Desenvolvido por @olattf</footer>
         </div>
     </div>
 
+    <!-- ============================================================
+         DADOS: MODO COMPLETO
+         Adiciona perguntas nos arrays de cada subdomínio.
+         Formato de cada pergunta:
+         {
+           "id": 1,
+           "enunciado": "Texto da pergunta...",
+           "opcoes": ["Opção A", "Opção B", "Opção C", "Opção D"],
+           "correta": 2,          <- índice (0-3) da opção correta
+           "explicacoes": {
+             "0": "Porquê A está errado...",
+             "1": "Porquê B está errado...",
+             "3": "Porquê D está errado..."
+             (não incluir a key da opção correta)
+           },
+           "resolucao": "Explicação completa da resposta certa..."
+         }
+    ============================================================ -->
+    <script id="data-completo" type="application/json">
+    {
+      "10": {
+        "Física": {
+          "Domínio 1: Energia e sua conservação": {
+            "SD1 Energia e movimentos": [],
+            "SD2 Energia e fenómenos elétricos": [],
+            "SD3 Energia, fenómenos térmicos e radiação": []
+          }
+        },
+        "Química": {
+          "Domínio 1: Elementos químicos e sua organização": {
+            "SD1 Massa e tamanho dos átomos": [],
+            "SD2 Energia dos eletrões nos átomos": [],
+            "SD3 Tabela Periódica": []
+          },
+          "Domínio 2: Propriedades e transformações da matéria": {
+            "SD4 Ligação química": [],
+            "SD5 Gases e dispersões": [],
+            "SD6 Transformações químicas": []
+          }
+        }
+      },
+      "11": {
+        "Física": {
+          "Domínio 1: Mecânica": {
+            "SD1 Tempo, posição, velocidade e aceleração": [
+              {
+                "id": 1,
+                "enunciado": "Um veículo automóvel move-se ao longo de uma estrada retilínea. A sua equação da posição em função do tempo, expressa no Sistema Internacional (SI), é dada por:\n\nx(t) = 5,0t² - 2,0t\n\nQual é o valor da velocidade inicial (no instante t = 0 s) e o valor da aceleração do veículo?",
+                "opcoes": [
+                  "Velocidade inicial = 0 m/s e Aceleração = 5,0 m/s²",
+                  "Velocidade inicial = -2,0 m/s e Aceleração = 5,0 m/s²",
+                  "Velocidade inicial = -2,0 m/s e Aceleração = 10,0 m/s²",
+                  "Velocidade inicial = 2,0 m/s e Aceleração = 10,0 m/s²"
+                ],
+                "correta": 2,
+                "explicacoes": {
+                  "0": "Incorreto. Assumiste que a velocidade inicial é zero, mas o termo linear (-2,0t) indica que existe uma velocidade inicial diferente de zero no instante inicial.",
+                  "1": "Incorreto. Identificaste bem a velocidade inicial através do termo linear, mas esqueceste-te de que na equação geral da posição x(t) = x0 + v0·t + (1/2)·a·t², o coeficiente de t² corresponde a metade da aceleração (1/2·a). Portanto, a aceleração não é simplesmente 5,0.",
+                  "3": "Incorreto. O sinal do termo da velocidade na equação é negativo (-2,0t), o que significa que a componente da velocidade inicial é -2,0 m/s e não positiva."
+                },
+                "resolucao": "Comparando a equação dada: x(t) = 5,0t² - 2,0t com a equação geral do movimento retilíneo uniformemente variado:\n\nx(t) = x0 + v0·t + (1/2)·a·t²\n\nPodemos identificar diretamente as componentes:\n1) O termo que multiplica por t é a velocidade inicial v0. Logo, v0 = -2,0 m/s.\n2) O termo que multiplica por t² corresponde a (1/2)·a. Logo, (1/2)·a = 5,0, o que implica que a aceleração a = 2 * 5,0 = 10,0 m/s²."
+              }
+            ],
+            "SD2 Interações e seus efeitos": [],
+            "SD3 Forças e movimentos": []
+          },
+          "Domínio 2: Ondas e eletromagnetismo": {
+            "SD4 Sinais e ondas": [],
+            "SD5 Eletromagnetismo e ondas eletromagnéticas": []
+          }
+        },
+        "Química": {
+          "Domínio 1: Equilíbrio químico": {
+            "SD1 Aspetos quantitativos das reações químicas": [],
+            "SD2 Estado de equilíbrio e extensão das reações químicas": []
+          },
+          "Domínio 2: Reações em sistemas aquosos": {
+            "SD3 Reações ácido-base": [],
+            "SD4 Reações de oxidação-redução": [],
+            "SD5 Soluções e equilíbrio de solubilidade": []
+          }
+        }
+      }
+    }
+    </script>
+
+    <!-- ============================================================
+         DADOS: MODO RESUMIDO
+         Mesma estrutura, mas só com as perguntas mais importantes.
+    ============================================================ -->
+    <script id="data-resumido" type="application/json">
+    {
+      "10": {
+        "Física": {
+          "Domínio 1: Energia e sua conservação": {
+            "SD1 Energia e movimentos": [],
+            "SD2 Energia e fenómenos elétricos": [],
+            "SD3 Energia, fenómenos térmicos e radiação": []
+          }
+        },
+        "Química": {
+          "Domínio 1: Elementos químicos e sua organização": {
+            "SD1 Massa e tamanho dos átomos": [],
+            "SD2 Energia dos eletrões nos átomos": [],
+            "SD3 Tabela Periódica": []
+          },
+          "Domínio 2: Propriedades e transformações da matéria": {
+            "SD4 Ligação química": [],
+            "SD5 Gases e dispersões": [],
+            "SD6 Transformações químicas": []
+          }
+        }
+      },
+      "11": {
+        "Física": {
+          "Domínio 1: Mecânica": {
+            "SD1 Tempo, posição, velocidade e aceleração": [
+              {
+                "id": 1,
+                "enunciado": "Um veículo automóvel move-se ao longo de uma estrada retilínea. A sua equação da posição em função do tempo, expressa no Sistema Internacional (SI), é dada por:\n\nx(t) = 5,0t² - 2,0t\n\nQual é o valor da velocidade inicial (no instante t = 0 s) e o valor da aceleração do veículo?",
+                "opcoes": [
+                  "Velocidade inicial = 0 m/s e Aceleração = 5,0 m/s²",
+                  "Velocidade inicial = -2,0 m/s e Aceleração = 5,0 m/s²",
+                  "Velocidade inicial = -2,0 m/s e Aceleração = 10,0 m/s²",
+                  "Velocidade inicial = 2,0 m/s e Aceleração = 10,0 m/s²"
+                ],
+                "correta": 2,
+                "explicacoes": {
+                  "0": "Incorreto. Assumiste que a velocidade inicial é zero, mas o termo linear (-2,0t) indica que existe uma velocidade inicial diferente de zero no instante inicial.",
+                  "1": "Incorreto. Identificaste bem a velocidade inicial através do termo linear, mas esqueceste-te de que na equação geral da posição x(t) = x0 + v0·t + (1/2)·a·t², o coeficiente de t² corresponde a metade da aceleração (1/2·a). Portanto, a aceleração não é simplesmente 5,0.",
+                  "3": "Incorreto. O sinal do termo da velocidade na equação é negativo (-2,0t), o que significa que a componente da velocidade inicial é -2,0 m/s e não positiva."
+                },
+                "resolucao": "Comparando a equação dada: x(t) = 5,0t² - 2,0t com a equação geral do movimento retilíneo uniformemente variado:\n\nx(t) = x0 + v0·t + (1/2)·a·t²\n\nPodemos identificar diretamente as componentes:\n1) O termo que multiplica por t é a velocidade inicial v0. Logo, v0 = -2,0 m/s.\n2) O termo que multiplica por t² corresponde a (1/2)·a. Logo, (1/2)·a = 5,0, o que implica que a aceleração a = 2 * 5,0 = 10,0 m/s²."
+              }
+            ],
+            "SD2 Interações e seus efeitos": [],
+            "SD3 Forças e movimentos": []
+          },
+          "Domínio 2: Ondas e eletromagnetismo": {
+            "SD4 Sinais e ondas": [],
+            "SD5 Eletromagnetismo e ondas eletromagnéticas": []
+          }
+        },
+        "Química": {
+          "Domínio 1: Equilíbrio químico": {
+            "SD1 Aspetos quantitativos das reações químicas": [],
+            "SD2 Estado de equilíbrio e extensão das reações químicas": []
+          },
+          "Domínio 2: Reações em sistemas aquosos": {
+            "SD3 Reações ácido-base": [],
+            "SD4 Reações de oxidação-redução": [],
+            "SD5 Soluções e equilíbrio de solubilidade": []
+          }
+        }
+      }
+    }
+    </script>
+
     <script>
+        // ── Carregar dados dos blocos JSON embutidos no HTML ──────────────
+        // Isto funciona tanto em file:// como em http://
+        const allData = {
+            completo:  JSON.parse(document.getElementById('data-completo').textContent),
+            resumido:  JSON.parse(document.getElementById('data-resumido').textContent)
+        };
+
+        // ── Estado da aplicação ───────────────────────────────────────────
         let currentPath = { year: null, subject: null, domain: null, subdomain: null };
         let currentQuestions = [];
         let currentQuestionIndex = 0;
         let canAnswer = true;
-        let studyMode = localStorage.getItem('study_mode'); // 'completo' ou 'resumido'
-        let quizData = null; // Preenchido após carregar o script JS
+        let studyMode = localStorage.getItem('study_mode');
+        let quizData = null;
 
-        // Chaves de gravação
+        // ── Chaves localStorage ───────────────────────────────────────────
         function getCompletedKey(year, subject, domain, sub) {
             return `completed_${year}_${subject}_${domain}_${sub}`;
         }
@@ -374,47 +281,20 @@
             return `progress_${year}_${subject}_${domain}_${sub}`;
         }
 
-        // Carrega dinamicamente o ficheiro correto
-        // BUG CORRIGIDO #1: após o onload, atribui window.quizData à variável local quizData
-        function loadQuestionsScript(mode, callback) {
-            const oldScript = document.getElementById('questions-data-script');
-            if (oldScript) oldScript.remove();
-
-            const script = document.createElement('script');
-            script.id = 'questions-data-script';
-
-            if (mode === 'completo') {
-                script.src = 'questions_completo.js';
-            } else {
-                script.src = 'questions_resumido.js';
-            }
-
-            script.onload = () => {
-                // O ficheiro .js define `const quizData` no scope global (window).
-                // Aqui capturamos esse valor para a variável local da aplicação.
-                quizData = window.quizData;
-                callback();
-            };
-
-            script.onerror = () => {
-                document.getElementById('app-content').innerHTML = `
-                    <h2 style="color:var(--incorrect-color);">Erro ao carregar os dados</h2>
-                    <p>Não foi possível encontrar o ficheiro <strong>questions_${mode}.js</strong> na pasta do teu projeto.</p>
-                    <p>Verifica se criaste os dois ficheiros com os nomes exatos.</p>
-                    <button class="btn" onclick="triggerFullReset()" style="text-align:center;">Voltar ao Menu Inicial</button>
-                `;
-            };
-
-            document.body.appendChild(script);
+        // ── Carregar dados do modo escolhido (sem fetch, sem scripts externos) ──
+        function loadData(mode) {
+            quizData = allData[mode];
         }
 
+        // ── Sidebar ───────────────────────────────────────────────────────
         function renderSidebar() {
             const badgeContainer = document.getElementById('mode-badge-container');
             const footerArea = document.getElementById('sidebar-footer-area');
 
             if (!studyMode || !quizData) {
                 badgeContainer.innerHTML = '';
-                document.getElementById('sidebar-content').innerHTML = '<div style="padding:10px; color:var(--text-muted); font-size:13px;">Escolha o modo de estudo para ver o progresso.</div>';
+                document.getElementById('sidebar-content').innerHTML =
+                    '<div style="padding:10px; color:var(--text-muted); font-size:13px;">Escolha o modo de estudo para ver o progresso.</div>';
                 footerArea.style.display = 'none';
                 return;
             }
@@ -431,25 +311,19 @@
                         html += `<div class="sb-domain">${domain}</div>`;
                         for (const sub in quizData[year][subject][domain]) {
                             const isDone = localStorage.getItem(getCompletedKey(year, subject, domain, sub));
-                            // BUG CORRIGIDO #5: usar parseInt para comparação segura com string do localStorage
                             const progress = parseInt(localStorage.getItem(getProgressKey(year, subject, domain, sub)) || '0');
                             const listLength = (quizData[year][subject][domain][sub] || []).length;
 
                             let statusClass = "status-none";
                             if (listLength > 0) {
-                                if (isDone) {
-                                    statusClass = "status-complete";
-                                } else if (progress > 0) {
-                                    statusClass = "status-partial";
-                                }
+                                if (isDone) statusClass = "status-complete";
+                                else if (progress > 0) statusClass = "status-partial";
                             }
 
-                            html += `
-                                <div class="sb-sub">
-                                    <span class="status-dot ${statusClass}"></span>
-                                    <span>${sub}</span>
-                                </div>
-                            `;
+                            html += `<div class="sb-sub">
+                                <span class="status-dot ${statusClass}"></span>
+                                <span>${sub}</span>
+                            </div>`;
                         }
                     }
                 }
@@ -457,29 +331,27 @@
             document.getElementById('sidebar-content').innerHTML = html;
         }
 
+        // ── Breadcrumb ────────────────────────────────────────────────────
         function buildBreadcrumb() {
             let parts = [];
-            if (currentPath.year) parts.push(`${currentPath.year}º Ano`);
-            if (currentPath.subject) parts.push(currentPath.subject);
-            if (currentPath.domain) parts.push(currentPath.domain);
+            if (currentPath.year)      parts.push(`${currentPath.year}º Ano`);
+            if (currentPath.subject)   parts.push(currentPath.subject);
+            if (currentPath.domain)    parts.push(currentPath.domain);
             if (currentPath.subdomain) parts.push(currentPath.subdomain);
-
             if (parts.length === 0) return '';
             return `<div class="breadcrumb">${parts.join(' &gt; ')}</div>`;
         }
 
-        // BUG CORRIGIDO #4: renderNavigation agora passa o nível ATUAL para resetPath,
-        // que apaga esse nível e faz cascade dos níveis abaixo.
+        // ── Navegação ─────────────────────────────────────────────────────
         function renderNavigation(currentLevel) {
             if (!currentPath.year) return '';
-            return `
-                <div class="navigation-controls">
-                    <button class="btn-nav" onclick="resetPath('${currentLevel}')">Voltar</button>
-                    <button class="btn-nav" onclick="resetToHome()">Menu Inicial</button>
-                </div>
-            `;
+            return `<div class="navigation-controls">
+                <button class="btn-nav" onclick="resetPath('${currentLevel}')">← Voltar</button>
+                <button class="btn-nav" onclick="resetToHome()">Menu Inicial</button>
+            </div>`;
         }
 
+        // ── Roteador principal ────────────────────────────────────────────
         function renderApp() {
             studyMode = localStorage.getItem('study_mode');
 
@@ -487,39 +359,28 @@
                 quizData = null;
                 renderSidebar();
                 renderModeSelection();
-            } else {
-                if (!quizData) {
-                    loadQuestionsScript(studyMode, () => {
-                        renderSidebar();
-                        navigateContent();
-                    });
-                } else {
-                    renderSidebar();
-                    navigateContent();
-                }
+                return;
             }
+
+            if (!quizData) loadData(studyMode);
+            renderSidebar();
+            navigateContent();
         }
 
         function navigateContent() {
-            if (!currentPath.year) {
-                renderYears();
-            } else if (!currentPath.subject) {
-                renderSubjects();
-            } else if (!currentPath.domain) {
-                renderDomains();
-            } else if (!currentPath.subdomain) {
-                renderSubdomains();
-            } else {
-                renderQuiz();
-            }
+            if (!currentPath.year)           renderYears();
+            else if (!currentPath.subject)   renderSubjects();
+            else if (!currentPath.domain)    renderDomains();
+            else if (!currentPath.subdomain) renderSubdomains();
+            else                             renderQuiz();
         }
 
+        // ── Ecrã de seleção de modo ───────────────────────────────────────
         function renderModeSelection() {
             document.getElementById('app-content').innerHTML = `
                 <div class="mode-selection">
                     <h2>Bem-vindo! Escolha o Modo de Estudo</h2>
-                    <p style="color: var(--text-muted); font-size: 15px;">Selecione como quer gerir o volume de exercícios da aplicação:</p>
-
+                    <p style="color:var(--text-muted);font-size:15px;">Selecione como quer gerir o volume de exercícios da aplicação:</p>
                     <div class="mode-grid">
                         <div class="mode-card" onclick="setStudyMode('completo')">
                             <span class="mode-icon">📚</span>
@@ -532,22 +393,18 @@
                             <p>Focado em revisões rápidas. Contém apenas uma seleção manual das 10 perguntas mais importantes por subunidade.</p>
                         </div>
                     </div>
-
                     <div class="warning-box">
                         <strong>⚠️ Atenção:</strong> Esta escolha define a base de dados da aplicação. Para alterar entre o Modo Completo e o Modo Resumido mais tarde, terá de limpar todo o progresso de estudo guardado no dispositivo.
                     </div>
-                </div>
-            `;
+                </div>`;
         }
 
         function setStudyMode(mode) {
             localStorage.setItem('study_mode', mode);
             studyMode = mode;
-
-            loadQuestionsScript(mode, () => {
-                renderSidebar();
-                navigateContent();
-            });
+            loadData(mode);
+            renderSidebar();
+            navigateContent();
         }
 
         function triggerFullReset() {
@@ -560,6 +417,7 @@
             }
         }
 
+        // ── Ecrãs de navegação ────────────────────────────────────────────
         function renderYears() {
             let html = '<h2>Selecionar Ano de Escolaridade</h2><div class="menu-grid">';
             Object.keys(quizData).forEach(year => {
@@ -570,10 +428,7 @@
         }
 
         function selectYear(year) {
-            currentPath.year = year;
-            currentPath.subject = null;
-            currentPath.domain = null;
-            currentPath.subdomain = null;
+            currentPath = { year, subject: null, domain: null, subdomain: null };
             renderApp();
         }
 
@@ -583,9 +438,7 @@
             Object.keys(quizData[currentPath.year]).forEach(subject => {
                 html += `<button class="btn" onclick="selectSubject('${subject}')">${subject}</button>`;
             });
-            html += '</div>';
-            // Passamos o nível atual ('subject') — o botão Voltar apagará este nível
-            html += renderNavigation('subject');
+            html += '</div>' + renderNavigation('subject');
             document.getElementById('app-content').innerHTML = html;
         }
 
@@ -602,8 +455,7 @@
             Object.keys(quizData[currentPath.year][currentPath.subject]).forEach(domain => {
                 html += `<button class="btn" onclick="selectDomain('${domain}')">${domain}</button>`;
             });
-            html += '</div>';
-            html += renderNavigation('domain');
+            html += '</div>' + renderNavigation('domain');
             document.getElementById('app-content').innerHTML = html;
         }
 
@@ -616,14 +468,12 @@
         function renderSubdomains() {
             let html = buildBreadcrumb();
             html += '<h2>Selecionar Subdomínio</h2><div class="menu-grid">';
-
             Object.keys(quizData[currentPath.year][currentPath.subject][currentPath.domain]).forEach(sub => {
                 const isDone = localStorage.getItem(getCompletedKey(currentPath.year, currentPath.subject, currentPath.domain, sub));
                 const badge = isDone ? '<span class="completed-badge">Completo ✓</span>' : '';
-                html += `<button class="btn" onclick="selectSubdomain('${sub}')">${sub} ${badge}</button>`;
+                html += `<button class="btn" onclick="selectSubdomain('${sub}')">${sub}${badge}</button>`;
             });
-            html += '</div>';
-            html += renderNavigation('subdomain');
+            html += '</div>' + renderNavigation('subdomain');
             document.getElementById('app-content').innerHTML = html;
         }
 
@@ -632,16 +482,13 @@
             currentQuestions = quizData[currentPath.year][currentPath.subject][currentPath.domain][sub] || [];
 
             const savedProgress = localStorage.getItem(getProgressKey(currentPath.year, currentPath.subject, currentPath.domain, sub));
-            if (savedProgress && !localStorage.getItem(getCompletedKey(currentPath.year, currentPath.subject, currentPath.domain, sub))) {
-                currentQuestionIndex = parseInt(savedProgress);
-            } else {
-                currentQuestionIndex = 0;
-            }
-
+            const isCompleted   = localStorage.getItem(getCompletedKey(currentPath.year, currentPath.subject, currentPath.domain, sub));
+            currentQuestionIndex = (savedProgress && !isCompleted) ? parseInt(savedProgress) : 0;
             canAnswer = true;
             renderApp();
         }
 
+        // ── Quiz ──────────────────────────────────────────────────────────
         function renderQuiz() {
             if (currentQuestions.length === 0) {
                 document.getElementById('app-content').innerHTML = `
@@ -649,10 +496,9 @@
                     <h2>Sem perguntas</h2>
                     <p>Ainda não foram adicionadas perguntas a este subdomínio neste modo de estudo.</p>
                     <div class="navigation-controls">
-                        <button class="btn-nav" onclick="resetPath('subdomain')">Voltar</button>
+                        <button class="btn-nav" onclick="resetPath('subdomain')">← Voltar</button>
                         <button class="btn-nav" onclick="resetToHome()">Menu Inicial</button>
-                    </div>
-                `;
+                    </div>`;
                 return;
             }
 
@@ -660,43 +506,37 @@
                 localStorage.setItem(getCompletedKey(currentPath.year, currentPath.subject, currentPath.domain, currentPath.subdomain), "true");
                 localStorage.removeItem(getProgressKey(currentPath.year, currentPath.subject, currentPath.domain, currentPath.subdomain));
                 renderSidebar();
-
                 document.getElementById('app-content').innerHTML = `
                     ${buildBreadcrumb()}
                     <h2>Subdomínio Concluído ✓</h2>
                     <p>Respondeste com sucesso a todos os exercícios deste subdomínio no modo <strong>${studyMode === 'completo' ? 'Completo' : 'Resumido'}</strong>.</p>
                     <div class="navigation-controls">
-                        <button class="btn-nav" onclick="resetPath('subdomain')">Voltar</button>
+                        <button class="btn-nav" onclick="resetPath('subdomain')">← Voltar</button>
                         <button class="btn-nav" onclick="resetToHome()">Menu Inicial</button>
-                    </div>
-                `;
+                    </div>`;
                 return;
             }
 
             const q = currentQuestions[currentQuestionIndex];
             let html = buildBreadcrumb();
-            html += `<div style="font-size: 14px; color: var(--text-muted); margin-bottom: 10px;">Pergunta ${currentQuestionIndex + 1} de ${currentQuestions.length}</div>`;
-            html += `<h3 style="line-height:1.5; white-space: pre-line;">${q.enunciado}</h3>`;
+            html += `<div style="font-size:14px;color:var(--text-muted);margin-bottom:10px;">Pergunta ${currentQuestionIndex + 1} de ${currentQuestions.length}</div>`;
+            html += `<h3 style="line-height:1.5;white-space:pre-line;">${q.enunciado}</h3>`;
             html += `<div class="options-grid">`;
-
             q.opcoes.forEach((opcao, index) => {
                 html += `<button class="btn option-btn" id="opt-${index}" onclick="checkAnswer(${index})">${opcao}</button>`;
             });
-
             html += `</div>`;
             html += `<div class="feedback-box" id="feedback"></div>`;
             html += `<div class="action-area" id="action-area"></div>`;
             html += renderNavigation('subdomain');
-
             document.getElementById('app-content').innerHTML = html;
         }
 
         function checkAnswer(selectedIndex) {
             if (!canAnswer) return;
-
             const q = currentQuestions[currentQuestionIndex];
-            const feedback = document.getElementById('feedback');
-            const actionArea = document.getElementById('action-area');
+            const feedback    = document.getElementById('feedback');
+            const actionArea  = document.getElementById('action-area');
             const selectedBtn = document.getElementById(`opt-${selectedIndex}`);
 
             if (selectedIndex === q.correta) {
@@ -708,7 +548,6 @@
                 feedback.className = "feedback-box right";
                 feedback.innerHTML = `<strong>Resposta Correta.</strong>\n\n${q.resolucao}`;
                 feedback.style.display = "block";
-
                 actionArea.innerHTML = `<button class="btn btn-next" onclick="nextQuestion()">Seguinte →</button>`;
 
                 localStorage.setItem(
@@ -720,7 +559,6 @@
                 selectedBtn.classList.add('incorrect');
                 selectedBtn.disabled = true;
 
-                // BUG CORRIGIDO #2: fallback para quando a key não existe no objeto explicacoes
                 const explicacao = (q.explicacoes && q.explicacoes[String(selectedIndex)])
                     ? q.explicacoes[String(selectedIndex)]
                     : 'Esta opção está incorreta. Tenta outra resposta.';
@@ -737,23 +575,11 @@
             renderQuiz();
         }
 
-        // BUG CORRIGIDO #3: resetPath agora apaga o nível indicado E todos os níveis abaixo em cascata
         function resetPath(level) {
-            if (level === 'subject') {
-                currentPath.subject = null;
-                currentPath.domain = null;
-                currentPath.subdomain = null;
-            } else if (level === 'domain') {
-                currentPath.domain = null;
-                currentPath.subdomain = null;
-            } else if (level === 'subdomain') {
-                currentPath.subdomain = null;
-            } else if (level === 'year') {
-                currentPath.year = null;
-                currentPath.subject = null;
-                currentPath.domain = null;
-                currentPath.subdomain = null;
-            }
+            if (level === 'year')      { currentPath.year = null; currentPath.subject = null; currentPath.domain = null; currentPath.subdomain = null; }
+            else if (level === 'subject')   { currentPath.subject = null; currentPath.domain = null; currentPath.subdomain = null; }
+            else if (level === 'domain')    { currentPath.domain = null; currentPath.subdomain = null; }
+            else if (level === 'subdomain') { currentPath.subdomain = null; }
             renderApp();
         }
 
@@ -762,7 +588,7 @@
             renderApp();
         }
 
-        // Inicializar
+        // ── Arrancar ──────────────────────────────────────────────────────
         renderApp();
     </script>
 </body>
