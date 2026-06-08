@@ -68,19 +68,72 @@
         .btn-reset { background-color: rgba(218, 54, 51, 0.1); color: #ff7b72; border: 1px solid rgba(218, 54, 51, 0.4); padding: 8px 12px; font-size: 12px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: 600; transition: background-color 0.2s; }
         .btn-reset:hover { background-color: var(--incorrect-color); color: #ffffff; }
         .completed-badge { float: right; font-size: 12px; background-color: rgba(35, 134, 54, 0.2); color: #56d364; padding: 2px 8px; border-radius: 12px; border: 1px solid var(--correct-color); }
+        /* Botão flutuante para abrir sidebar em mobile */
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            bottom: 22px;
+            right: 18px;
+            z-index: 200;
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+        }
+        .sidebar-toggle:active { transform: scale(0.96); }
+
+        /* Overlay escuro por trás da sidebar */
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 99;
+        }
+        .sidebar-overlay.active { display: block; }
+
         @media (max-width: 768px) {
-            .layout { flex-direction: column; }
-            .sidebar { width: 100%; height: 200px; border-right: none; border-bottom: 1px solid var(--border-color); }
+            /* Sidebar como drawer que desliza da esquerda */
+            .sidebar {
+                position: fixed;
+                top: 0; left: 0;
+                height: 100%;
+                width: 85%;
+                max-width: 320px;
+                z-index: 100;
+                transform: translateX(-100%);
+                transition: transform 0.28s ease;
+            }
+            .sidebar.open { transform: translateX(0); }
+
+            .main-wrapper { width: 100%; }
             .mode-grid { grid-template-columns: 1fr; gap: 15px; }
-            .content-area { padding: 20px 10px; }
+            .content-area { padding: 16px 12px; }
+            .container { padding: 20px 16px; }
+            .sidebar-toggle { display: block; }
+            .footer { font-size: 11px; padding: 12px 10px; line-height: 1.6; }
         }
     </style>
 </head>
 <body>
+    <!-- Overlay para fechar a sidebar ao tocar fora -->
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+    <!-- Botão flutuante visível só em mobile -->
+    <button class="sidebar-toggle" id="sidebar-toggle" onclick="openSidebar()">📊 Progresso</button>
+
     <div class="layout">
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <div>Progresso do Estudo</div>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span>Progresso do Estudo</span>
+                    <button onclick="closeSidebar()" style="display:none; background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer; padding:0; line-height:1;" id="sidebar-close-btn">✕</button>
+                </div>
                 <div id="mode-badge-container"></div>
                 <div id="sidebar-footer-area" style="display:none; margin-top: 10px;">
                     <button class="btn-reset" onclick="triggerFullReset()">🗑️ Apagar Todo o Progresso</button>
@@ -590,6 +643,17 @@
         function resetToHome() {
             currentPath = { year: null, subject: null, domain: null, subdomain: null };
             renderApp();
+        }
+
+        // ── Sidebar drawer (mobile) ───────────────────────────────────────
+        function openSidebar() {
+            document.getElementById('sidebar').classList.add('open');
+            document.getElementById('sidebar-overlay').classList.add('active');
+            document.getElementById('sidebar-close-btn').style.display = 'block';
+        }
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('sidebar-overlay').classList.remove('active');
         }
 
         // ── Arrancar ──────────────────────────────────────────────────────
