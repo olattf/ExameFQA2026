@@ -68,7 +68,7 @@
         .btn-reset { background-color: rgba(218, 54, 51, 0.1); color: #ff7b72; border: 1px solid rgba(218, 54, 51, 0.4); padding: 8px 12px; font-size: 12px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: 600; transition: background-color 0.2s; }
         .btn-reset:hover { background-color: var(--incorrect-color); color: #ffffff; }
         .completed-badge { float: right; font-size: 12px; background-color: rgba(35, 134, 54, 0.2); color: #56d364; padding: 2px 8px; border-radius: 12px; border: 1px solid var(--correct-color); }
-        /* Botão flutuante para abrir sidebar em mobile */
+        
         .sidebar-toggle {
             display: none;
             position: fixed;
@@ -87,7 +87,6 @@
         }
         .sidebar-toggle:active { transform: scale(0.96); }
 
-        /* Overlay escuro por trás da sidebar */
         .sidebar-overlay {
             display: none;
             position: fixed;
@@ -98,7 +97,6 @@
         .sidebar-overlay.active { display: block; }
 
         @media (max-width: 768px) {
-            /* Sidebar como drawer que desliza da esquerda */
             .sidebar {
                 position: fixed;
                 top: 0; left: 0;
@@ -121,10 +119,8 @@
     </style>
 </head>
 <body>
-    <!-- Overlay para fechar a sidebar ao tocar fora -->
     <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
 
-    <!-- Botão flutuante visível só em mobile -->
     <button class="sidebar-toggle" id="sidebar-toggle" onclick="openSidebar()">📊 Progresso</button>
 
     <div class="layout">
@@ -156,170 +152,14 @@
         </div>
     </div>
 
-    <!-- ============================================================
-         DADOS: MODO COMPLETO
-         Adiciona perguntas nos arrays de cada subdomínio.
-         Formato de cada pergunta:
-         {
-           "id": 1,
-           "enunciado": "Texto da pergunta...",
-           "opcoes": ["Opção A", "Opção B", "Opção C", "Opção D"],
-           "correta": 2,          <- índice (0-3) da opção correta
-           "explicacoes": {
-             "0": "Porquê A está errado...",
-             "1": "Porquê B está errado...",
-             "3": "Porquê D está errado..."
-             (não incluir a key da opção correta)
-           },
-           "resolucao": "Explicação completa da resposta certa..."
-         }
-    ============================================================ -->
-    <script id="data-completo" type="application/json">
-    {
-      "10": {
-        "Física": {
-          "Domínio 1: Energia e sua conservação": {
-            "SD1 Energia e movimentos": [],
-            "SD2 Energia e fenómenos elétricos": [],
-            "SD3 Energia, fenómenos térmicos e radiação": []
-          }
-        },
-        "Química": {
-          "Domínio 1: Elementos químicos e sua organização": {
-            "SD1 Massa e tamanho dos átomos": [],
-            "SD2 Energia dos eletrões nos átomos": [],
-            "SD3 Tabela Periódica": []
-          },
-          "Domínio 2: Propriedades e transformações da matéria": {
-            "SD4 Ligação química": [],
-            "SD5 Gases e dispersões": [],
-            "SD6 Transformações químicas": []
-          }
-        }
-      },
-      "11": {
-        "Física": {
-          "Domínio 1: Mecânica": {
-            "SD1 Tempo, posição, velocidade e aceleração": [
-              {
-                "id": 1,
-                "enunciado": "Um veículo automóvel move-se ao longo de uma estrada retilínea. A sua equação da posição em função do tempo, expressa no Sistema Internacional (SI), é dada por:\n\nx(t) = 5,0t² - 2,0t\n\nQual é o valor da velocidade inicial (no instante t = 0 s) e o valor da aceleração do veículo?",
-                "opcoes": [
-                  "Velocidade inicial = 0 m/s e Aceleração = 5,0 m/s²",
-                  "Velocidade inicial = -2,0 m/s e Aceleração = 5,0 m/s²",
-                  "Velocidade inicial = -2,0 m/s e Aceleração = 10,0 m/s²",
-                  "Velocidade inicial = 2,0 m/s e Aceleração = 10,0 m/s²"
-                ],
-                "correta": 2,
-                "explicacoes": {
-                  "0": "Incorreto. Assumiste que a velocidade inicial é zero, mas o termo linear (-2,0t) indica que existe uma velocidade inicial diferente de zero no instante inicial.",
-                  "1": "Incorreto. Identificaste bem a velocidade inicial através do termo linear, mas esqueceste-te de que na equação geral da posição x(t) = x0 + v0·t + (1/2)·a·t², o coeficiente de t² corresponde a metade da aceleração (1/2·a). Portanto, a aceleração não é simplesmente 5,0.",
-                  "3": "Incorreto. O sinal do termo da velocidade na equação é negativo (-2,0t), o que significa que a componente da velocidade inicial é -2,0 m/s e não positiva."
-                },
-                "resolucao": "Comparando a equação dada: x(t) = 5,0t² - 2,0t com a equação geral do movimento retilíneo uniformemente variado:\n\nx(t) = x0 + v0·t + (1/2)·a·t²\n\nPodemos identificar diretamente as componentes:\n1) O termo que multiplica por t é a velocidade inicial v0. Logo, v0 = -2,0 m/s.\n2) O termo que multiplica por t² corresponde a (1/2)·a. Logo, (1/2)·a = 5,0, o que implica que a aceleração a = 2 * 5,0 = 10,0 m/s²."
-              }
-            ],
-            "SD2 Interações e seus efeitos": [],
-            "SD3 Forças e movimentos": []
-          },
-          "Domínio 2: Ondas e eletromagnetismo": {
-            "SD4 Sinais e ondas": [],
-            "SD5 Eletromagnetismo e ondas eletromagnéticas": []
-          }
-        },
-        "Química": {
-          "Domínio 1: Equilíbrio químico": {
-            "SD1 Aspetos quantitativos das reações químicas": [],
-            "SD2 Estado de equilíbrio e extensão das reações químicas": []
-          },
-          "Domínio 2: Reações em sistemas aquosos": {
-            "SD3 Reações ácido-base": [],
-            "SD4 Reações de oxidação-redução": [],
-            "SD5 Soluções e equilíbrio de solubilidade": []
-          }
-        }
-      }
-    }
-    </script>
-
-    <!-- ============================================================
-         DADOS: MODO RESUMIDO
-         Mesma estrutura, mas só com as perguntas mais importantes.
-    ============================================================ -->
-    <script id="data-resumido" type="application/json">
-    {
-      "10": {
-        "Física": {
-          "Domínio 1: Energia e sua conservação": {
-            "SD1 Energia e movimentos": [],
-            "SD2 Energia e fenómenos elétricos": [],
-            "SD3 Energia, fenómenos térmicos e radiação": []
-          }
-        },
-        "Química": {
-          "Domínio 1: Elementos químicos e sua organização": {
-            "SD1 Massa e tamanho dos átomos": [],
-            "SD2 Energia dos eletrões nos átomos": [],
-            "SD3 Tabela Periódica": []
-          },
-          "Domínio 2: Propriedades e transformações da matéria": {
-            "SD4 Ligação química": [],
-            "SD5 Gases e dispersões": [],
-            "SD6 Transformações químicas": []
-          }
-        }
-      },
-      "11": {
-        "Física": {
-          "Domínio 1: Mecânica": {
-            "SD1 Tempo, posição, velocidade e aceleração": [
-              {
-                "id": 1,
-                "enunciado": "Um veículo automóvel move-se ao longo de uma estrada retilínea. A sua equação da posição em função do tempo, expressa no Sistema Internacional (SI), é dada por:\n\nx(t) = 5,0t² - 2,0t\n\nQual é o valor da velocidade inicial (no instante t = 0 s) e o valor da aceleração do veículo?",
-                "opcoes": [
-                  "Velocidade inicial = 0 m/s e Aceleração = 5,0 m/s²",
-                  "Velocidade inicial = -2,0 m/s e Aceleração = 5,0 m/s²",
-                  "Velocidade inicial = -2,0 m/s e Aceleração = 10,0 m/s²",
-                  "Velocidade inicial = 2,0 m/s e Aceleração = 10,0 m/s²"
-                ],
-                "correta": 2,
-                "explicacoes": {
-                  "0": "Incorreto. Assumiste que a velocidade inicial é zero, mas o termo linear (-2,0t) indica que existe uma velocidade inicial diferente de zero no instante inicial.",
-                  "1": "Incorreto. Identificaste bem a velocidade inicial através do termo linear, mas esqueceste-te de que na equação geral da posição x(t) = x0 + v0·t + (1/2)·a·t², o coeficiente de t² corresponde a metade da aceleração (1/2·a). Portanto, a aceleração não é simplesmente 5,0.",
-                  "3": "Incorreto. O sinal do termo da velocidade na equação é negativo (-2,0t), o que significa que a componente da velocidade inicial é -2,0 m/s e não positiva."
-                },
-                "resolucao": "Comparando a equação dada: x(t) = 5,0t² - 2,0t com a equação geral do movimento retilíneo uniformemente variado:\n\nx(t) = x0 + v0·t + (1/2)·a·t²\n\nPodemos identificar diretamente as componentes:\n1) O termo que multiplica por t é a velocidade inicial v0. Logo, v0 = -2,0 m/s.\n2) O termo que multiplica por t² corresponde a (1/2)·a. Logo, (1/2)·a = 5,0, o que implica que a aceleração a = 2 * 5,0 = 10,0 m/s²."
-              }
-            ],
-            "SD2 Interações e seus efeitos": [],
-            "SD3 Forças e movimentos": []
-          },
-          "Domínio 2: Ondas e eletromagnetismo": {
-            "SD4 Sinais e ondas": [],
-            "SD5 Eletromagnetismo e ondas eletromagnéticas": []
-          }
-        },
-        "Química": {
-          "Domínio 1: Equilíbrio químico": {
-            "SD1 Aspetos quantitativos das reações químicas": [],
-            "SD2 Estado de equilíbrio e extensão das reações químicas": []
-          },
-          "Domínio 2: Reações em sistemas aquosos": {
-            "SD3 Reações ácido-base": [],
-            "SD4 Reações de oxidação-redução": [],
-            "SD5 Soluções e equilíbrio de solubilidade": []
-          }
-        }
-      }
-    }
-    </script>
+    <script src="questions_completo.js"></script>
+    <script src="questions_resumido.js"></script>
 
     <script>
-        // ── Carregar dados dos blocos JSON embutidos no HTML ──────────────
-        // Isto funciona tanto em file:// como em http://
+        // ── Carregar dados dos ficheiros JS externos ──────────────
         const allData = {
-            completo:  JSON.parse(document.getElementById('data-completo').textContent),
-            resumido:  JSON.parse(document.getElementById('data-resumido').textContent)
+            completo: dataCompleto,
+            resumido: dataResumido
         };
 
         // ── Estado da aplicação ───────────────────────────────────────────
@@ -338,7 +178,7 @@
             return `progress_${year}_${subject}_${domain}_${sub}`;
         }
 
-        // ── Carregar dados do modo escolhido (sem fetch, sem scripts externos) ──
+        // ── Carregar dados do modo escolhido ──
         function loadData(mode) {
             quizData = allData[mode];
         }
