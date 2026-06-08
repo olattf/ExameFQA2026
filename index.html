@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preparação de FQA</title>
+    <title>Preparação Exame Física e Química A 2026</title>
     <style>
         :root {
             --bg-color: #0d1117;
             --container-bg: #161b22;
+            --sidebar-bg: #010409;
             --text-color: #c9d1d9;
             --text-muted: #8b949e;
             --border-color: #30363d;
@@ -15,6 +16,7 @@
             --button-hover: #30363d;
             --correct-color: #238636;
             --incorrect-color: #da3633;
+            --partial-color: #2f81f7;
         }
 
         body {
@@ -22,12 +24,81 @@
             color: var(--text-color);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Layout Principal */
+        .layout {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Barra Lateral (Sidebar) */
+        .sidebar {
+            width: 300px;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
             padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: bold;
+            font-size: 16px;
+            color: #f0f6fc;
+        }
+
+        .sidebar-content {
+            padding: 15px;
+            flex: 1;
+        }
+
+        .sb-year { font-weight: bold; margin-top: 15px; margin-bottom: 5px; color: #f0f6fc; }
+        .sb-subject { font-weight: 600; margin-left: 10px; margin-top: 10px; color: var(--text-color); }
+        .sb-domain { font-size: 14px; margin-left: 20px; margin-top: 8px; color: var(--text-muted); }
+        .sb-sub { 
+            font-size: 13px; 
+            margin-left: 30px; 
+            margin-top: 5px; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
+            color: var(--text-muted);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .status-none { background-color: transparent; border: 1px solid var(--text-muted); }
+        .status-partial { background-color: var(--partial-color); border: 1px solid var(--partial-color); }
+        .status-complete { background-color: var(--correct-color); border: 1px solid var(--correct-color); }
+
+        /* Área de Conteúdo Central */
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .content-area {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
+            padding: 40px 20px;
         }
 
         .container {
@@ -40,10 +111,28 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.5);
         }
 
-        h1, h2, h3 {
+        /* Rodapé */
+        .footer {
+            text-align: center;
+            padding: 15px;
+            color: var(--text-muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--container-bg);
+        }
+
+        /* Elementos da Aplicação */
+        h1 {
             color: #f0f6fc;
             margin-top: 0;
+            font-size: 22px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 15px;
         }
+
+        h2, h3 { color: #f0f6fc; margin-top: 0; }
 
         .menu-grid {
             display: flex;
@@ -71,35 +160,22 @@
             border-color: #8b949e;
         }
 
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .btn.correct {
-            background-color: var(--correct-color);
-            border-color: var(--correct-color);
-            color: #ffffff;
-        }
-
-        .btn.incorrect {
-            background-color: var(--incorrect-color);
-            border-color: var(--incorrect-color);
-            color: #ffffff;
-        }
+        .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .btn.correct { background-color: var(--correct-color); border-color: var(--correct-color); color: #ffffff; }
+        .btn.incorrect { background-color: var(--incorrect-color); border-color: var(--incorrect-color); color: #ffffff; }
 
         .breadcrumb {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
+            background-color: rgba(48, 54, 61, 0.2);
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid rgba(48, 54, 61, 0.5);
             margin-bottom: 20px;
+            line-height: 1.4;
         }
 
-        .options-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 20px;
-        }
+        .options-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
 
         .feedback-box {
             margin-top: 20px;
@@ -110,36 +186,34 @@
             display: none;
         }
 
-        .feedback-box.wrong {
-            background-color: rgba(218, 54, 51, 0.1);
-            border: 1px solid var(--incorrect-color);
-            color: #ff7b72;
-        }
+        .feedback-box.wrong { background-color: rgba(218, 54, 51, 0.1); border: 1px solid var(--incorrect-color); color: #ff7b72; }
+        .feedback-box.right { background-color: rgba(35, 134, 54, 0.1); border: 1px solid var(--correct-color); color: #56d364; }
 
-        .feedback-box.right {
-            background-color: rgba(35, 134, 54, 0.1);
-            border: 1px solid var(--correct-color);
-            color: #56d364;
-        }
+        .action-area { margin-top: 25px; display: flex; justify-content: flex-end; }
+        .btn-next { background-color: #238636; color: #ffffff; border: 1px solid rgba(240,246,252,0.1); padding: 10px 20px; font-weight: 600; text-align: center; }
+        .btn-next:hover { background-color: #2ea043; }
 
-        .action-area {
-            margin-top: 25px;
+        .navigation-controls {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
             display: flex;
-            justify-content: flex-end;
+            gap: 10px;
         }
 
-        .btn-next {
-            background-color: #238636;
-            color: #ffffff;
-            border: 1px solid rgba(240,246,252,0.1);
-            padding: 10px 20px;
-            font-weight: 600;
+        .btn-nav {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 8px 14px;
+            font-size: 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            flex: 1;
             text-align: center;
         }
 
-        .btn-next:hover {
-            background-color: #2ea043;
-        }
+        .btn-nav:hover { color: var(--text-color); border-color: #8b949e; background-color: var(--button-bg); }
 
         .completed-badge {
             float: right;
@@ -150,12 +224,36 @@
             border-radius: 12px;
             border: 1px solid var(--correct-color);
         }
+
+        @media (max-width: 768px) {
+            .layout { flex-direction: column; }
+            .sidebar { width: 100%; height: 200px; border-right: none; border-bottom: 1px solid var(--border-color); }
+            .content-area { padding: 20px 10px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container" id="app">
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">Progresso do Estudo</div>
+            <div class="sidebar-content" id="sidebar-content">
+                </div>
+        </aside>
+
+        <div class="main-wrapper">
+            <div class="content-area">
+                <div class="container">
+                    <h1>Preparação Exame Física e Química A 2026</h1>
+                    <div id="app-content">
+                        </div>
+                </div>
+            </div>
+            <footer class="footer">
+                Desenvolvido por @olattf
+            </footer>
         </div>
+    </div>
 
     <script src="questions.js"></script>
     <script>
@@ -164,12 +262,77 @@
         let currentQuestionIndex = 0;
         let canAnswer = true;
 
+        // Funções de chaves de gravação
         function getCompletedKey(year, subject, domain, sub) {
             return `completed_${year}_${subject}_${domain}_${sub}`;
         }
+        function getProgressKey(year, subject, domain, sub) {
+            return `progress_${year}_${subject}_${domain}_${sub}`;
+        }
+
+        // Função para atualizar a barra lateral
+        function renderSidebar() {
+            let html = '';
+            
+            for (const year in quizData) {
+                html += `<div class="sb-year">${year}º Ano</div>`;
+                for (const subject in quizData[year]) {
+                    html += `<div class="sb-subject">${subject}</div>`;
+                    for (const domain in quizData[year][subject]) {
+                        html += `<div class="sb-domain">${domain}</div>`;
+                        for (const sub in quizData[year][subject][domain]) {
+                            
+                            const isDone = localStorage.getItem(getCompletedKey(year, subject, domain, sub));
+                            const progress = localStorage.getItem(getProgressKey(year, subject, domain, sub));
+                            const questionsArray = quizData[year][subject][domain][sub];
+                            
+                            let statusClass = "status-none"; // Não iniciado
+                            if (isDone) {
+                                statusClass = "status-complete"; // Completo
+                            } else if (progress > 0) {
+                                statusClass = "status-partial"; // Em curso
+                            }
+
+                            // Se o array de perguntas estiver vazio, continua a mostrar como não iniciado
+                            if (questionsArray.length === 0) statusClass = "status-none";
+
+                            html += `
+                                <div class="sb-sub">
+                                    <span class="status-dot ${statusClass}"></span>
+                                    <span>${sub}</span>
+                                </div>
+                            `;
+                        }
+                    }
+                }
+            }
+            document.getElementById('sidebar-content').innerHTML = html;
+        }
+
+        function buildBreadcrumb() {
+            let parts = [];
+            if (currentPath.year) parts.push(`${currentPath.year}º Ano`);
+            if (currentPath.subject) parts.push(currentPath.subject);
+            if (currentPath.domain) parts.push(currentPath.domain);
+            if (currentPath.subdomain) parts.push(currentPath.subdomain);
+            
+            if (parts.length === 0) return '';
+            return `<div class="breadcrumb">${parts.join(' &gt; ')}</div>`;
+        }
+
+        function renderNavigation(backLevel) {
+            if (!currentPath.year) return '';
+            return `
+                <div class="navigation-controls">
+                    <button class="btn-nav" onclick="resetPath('${backLevel}')">Voltar</button>
+                    <button class="btn-nav" onclick="resetToHome()">Menu Inicial</button>
+                </div>
+            `;
+        }
 
         function renderApp() {
-            const app = document.getElementById('app');
+            const content = document.getElementById('app-content');
+            renderSidebar(); // Atualiza a barra lateral sempre que renderizamos a app
             
             if (!currentPath.year) {
                 renderYears();
@@ -190,7 +353,7 @@
                 html += `<button class="btn" onclick="selectYear('${year}')">${year}º Ano</button>`;
             });
             html += '</div>';
-            document.getElementById('app').innerHTML = html;
+            document.getElementById('app-content').innerHTML = html;
         }
 
         function selectYear(year) {
@@ -199,14 +362,14 @@
         }
 
         function renderSubjects() {
-            let html = `<div class="breadcrumb">${currentPath.year}º Ano</div>`;
+            let html = buildBreadcrumb();
             html += '<h2>Selecionar Disciplina</h2><div class="menu-grid">';
             Object.keys(quizData[currentPath.year]).forEach(subject => {
                 html += `<button class="btn" onclick="selectSubject('${subject}')">${subject}</button>`;
             });
-            html += `<button class="btn" style="margin-top:15px; background:transparent;" onclick="resetPath('year')">Voltar</button>`;
             html += '</div>';
-            document.getElementById('app').innerHTML = html;
+            html += renderNavigation('year');
+            document.getElementById('app-content').innerHTML = html;
         }
 
         function selectSubject(subject) {
@@ -215,14 +378,14 @@
         }
 
         function renderDomains() {
-            let html = `<div class="breadcrumb">${currentPath.year}º Ano > ${currentPath.subject}</div>`;
+            let html = buildBreadcrumb();
             html += '<h2>Selecionar Domínio</h2><div class="menu-grid">';
             Object.keys(quizData[currentPath.year][currentPath.subject]).forEach(domain => {
                 html += `<button class="btn" onclick="selectDomain('${domain}')">${domain}</button>`;
             });
-            html += `<button class="btn" style="margin-top:15px; background:transparent;" onclick="resetPath('subject')">Voltar</button>`;
             html += '</div>';
-            document.getElementById('app').innerHTML = html;
+            html += renderNavigation('subject');
+            document.getElementById('app-content').innerHTML = html;
         }
 
         function selectDomain(domain) {
@@ -231,7 +394,7 @@
         }
 
         function renderSubdomains() {
-            let html = `<div class="breadcrumb">${currentPath.year}º Ano > ${currentPath.subject} > ${currentPath.domain}</div>`;
+            let html = buildBreadcrumb();
             html += '<h2>Selecionar Subdomínio</h2><div class="menu-grid">';
             
             Object.keys(quizData[currentPath.year][currentPath.subject][currentPath.domain]).forEach(sub => {
@@ -239,42 +402,62 @@
                 const badge = isDone ? '<span class="completed-badge">Completo</span>' : '';
                 html += `<button class="btn" onclick="selectSubdomain('${sub}')">${sub} ${badge}</button>`;
             });
-            html += `<button class="btn" style="margin-top:15px; background:transparent;" onclick="resetPath('domain')">Voltar</button>`;
             html += '</div>';
-            document.getElementById('app').innerHTML = html;
+            html += renderNavigation('domain');
+            document.getElementById('app-content').innerHTML = html;
         }
 
         function selectSubdomain(sub) {
             currentPath.subdomain = sub;
             currentQuestions = quizData[currentPath.year][currentPath.subject][currentPath.domain][sub];
-            currentQuestionIndex = 0;
+            
+            // Verifica se havia progresso guardado para não recomeçar do zero
+            const savedProgress = localStorage.getItem(getProgressKey(currentPath.year, currentPath.subject, currentPath.domain, sub));
+            if (savedProgress && !localStorage.getItem(getCompletedKey(currentPath.year, currentPath.subject, currentPath.domain, sub))) {
+                currentQuestionIndex = parseInt(savedProgress);
+            } else {
+                currentQuestionIndex = 0;
+            }
+            
             canAnswer = true;
             renderApp();
         }
 
         function renderQuiz() {
             if (currentQuestions.length === 0) {
-                document.getElementById('app').innerHTML = `
+                document.getElementById('app-content').innerHTML = `
+                    ${buildBreadcrumb()}
                     <h2>Sem perguntas</h2>
                     <p>Ainda não foram adicionadas perguntas a este subdomínio.</p>
-                    <button class="btn" onclick="resetPath('subdomain')">Voltar ao Menu</button>
+                    <div class="navigation-controls">
+                        <button class="btn-nav" onclick="resetPath('subdomain')">Voltar aos Subdomínios</button>
+                        <button class="btn-nav" onclick="resetToHome()">Menu Inicial</button>
+                    </div>
                 `;
                 return;
             }
 
             if (currentQuestionIndex >= currentQuestions.length) {
-                // Fim do subdomínio
+                // Guarda como concluído e limpa o estado parcial
                 localStorage.setItem(getCompletedKey(currentPath.year, currentPath.subject, currentPath.domain, currentPath.subdomain), "true");
-                document.getElementById('app').innerHTML = `
+                localStorage.removeItem(getProgressKey(currentPath.year, currentPath.subject, currentPath.domain, currentPath.subdomain));
+                renderSidebar(); // Atualiza a cor na barra
+
+                document.getElementById('app-content').innerHTML = `
+                    ${buildBreadcrumb()}
                     <h2>Subdomínio Concluído</h2>
                     <p>Respondeste corretamente a todas as perguntas desta subunidade.</p>
-                    <button class="btn" onclick="resetPath('subdomain')">Voltar aos Subdomínios</button>
+                    <div class="navigation-controls">
+                        <button class="btn-nav" onclick="resetPath('subdomain')">Voltar aos Subdomínios</button>
+                        <button class="btn-nav" onclick="resetToHome()">Menu Inicial</button>
+                    </div>
                 `;
                 return;
             }
 
             const q = currentQuestions[currentQuestionIndex];
-            let html = `<div class="breadcrumb">${currentPath.subject} ${currentPath.year}º Ano > ${currentPath.subdomain} (Pergunta ${currentQuestionIndex + 1}/${currentQuestions.length})</div>`;
+            let html = buildBreadcrumb();
+            html += `<div style="font-size: 14px; color: var(--text-muted); margin-bottom: 10px;">Pergunta ${currentQuestionIndex + 1} de ${currentQuestions.length}</div>`;
             html += `<h3 style="line-height:1.5; white-space: pre-line;">${q.enunciado}</h3>`;
             html += `<div class="options-grid">`;
             
@@ -285,8 +468,9 @@
             html += `</div>`;
             html += `<div class="feedback-box" id="feedback"></div>`;
             html += `<div class="action-area" id="action-area"></div>`;
+            html += renderNavigation('subdomain');
 
-            document.getElementById('app').innerHTML = html;
+            document.getElementById('app-content').innerHTML = html;
         }
 
         function checkAnswer(selectedIndex) {
@@ -298,9 +482,7 @@
             const selectedBtn = document.getElementById(`opt-${selectedIndex}`);
 
             if (selectedIndex === q.correta) {
-                // Resposta Correta
                 canAnswer = false;
-                // Bloquear todos os botões e pintar o correto de verde
                 document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
                 selectedBtn.disabled = false;
                 selectedBtn.classList.add('correct');
@@ -310,10 +492,13 @@
                 feedback.style.display = "block";
 
                 actionArea.innerHTML = `<button class="btn btn-next" onclick="nextQuestion()">Seguinte</button>`;
+                
+                // Gravar progresso parcial
+                localStorage.setItem(getProgressKey(currentPath.year, currentPath.subject, currentPath.domain, currentPath.subdomain), currentQuestionIndex + 1);
+                renderSidebar();
             } else {
-                // Resposta Incorreta
                 selectedBtn.classList.add('incorrect');
-                selectedBtn.disabled = true; // Impede clicar na mesma opção errada de novo
+                selectedBtn.disabled = true;
                 
                 feedback.className = "feedback-box wrong";
                 feedback.innerHTML = `<strong>Opção Incorreta.</strong><br>${q.explicacoes[selectedIndex]}`;
@@ -332,6 +517,11 @@
             if (level === 'subject') currentPath.subject = null;
             if (level === 'domain') currentPath.domain = null;
             if (level === 'subdomain') currentPath.subdomain = null;
+            renderApp();
+        }
+
+        function resetToHome() {
+            currentPath = { year: null, subject: null, domain: null, subdomain: null };
             renderApp();
         }
 
